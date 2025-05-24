@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Users, Heart, Activity } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const healthPackages = [
   {
@@ -60,12 +61,14 @@ const healthPackages = [
 ];
 
 export const HealthPackages = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Health Checkup Packages</h2>
-          <p className="text-gray-600">Comprehensive health packages at unbeatable prices</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('packages.title')}</h2>
+          <p className="text-gray-600">{t('packages.subtitle')}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -76,7 +79,7 @@ export const HealthPackages = () => {
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <Badge className="bg-medical-orange text-white px-3 py-1">
-                      Most Popular
+                      {t('packages.mostPopular')}
                     </Badge>
                   </div>
                 )}
@@ -91,7 +94,7 @@ export const HealthPackages = () => {
                     {pkg.name}
                   </CardTitle>
                   <Badge variant="outline" className="mb-3">
-                    {pkg.tests} Tests Included
+                    {pkg.tests} {t('packages.testsIncluded')}
                   </Badge>
                   <p className="text-sm text-gray-600">{pkg.description}</p>
                 </CardHeader>
@@ -110,7 +113,7 @@ export const HealthPackages = () => {
                   </div>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-sm mb-2 text-gray-700">Key Tests:</h4>
+                    <h4 className="font-semibold text-sm mb-2 text-gray-700">{t('packages.keyTests')}</h4>
                     <div className="space-y-1">
                       {pkg.features.slice(0, 4).map((feature, index) => (
                         <div key={index} className="text-xs text-gray-600 flex items-center">
@@ -122,7 +125,7 @@ export const HealthPackages = () => {
                   </div>
                   
                   <Button className="w-full bg-medical-primary hover:bg-medical-dark text-white">
-                    Book Package
+                    {t('packages.bookPackage')}
                   </Button>
                 </CardContent>
               </Card>
@@ -132,7 +135,7 @@ export const HealthPackages = () => {
         
         <div className="text-center mt-8">
           <Button variant="outline" className="border-medical-primary text-medical-primary hover:bg-medical-primary hover:text-white">
-            View All Packages
+            {t('packages.viewAll')}
           </Button>
         </div>
       </div>

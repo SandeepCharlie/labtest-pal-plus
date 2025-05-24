@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const Header = () => {
   const { selectedLanguage, setSelectedLanguage, languages } = useLanguage();
+  const { t } = useTranslation();
 
   const handleLanguageChange = (languageCode: string) => {
     const language = languages.find(lang => lang.code === languageCode);
@@ -21,11 +23,11 @@ export const Header = () => {
         {/* Top bar */}
         <div className="flex items-center justify-between py-2 text-sm">
           <div className="flex items-center space-x-4">
-            <span className="text-gray-600">Get medicines & health products delivered</span>
+            <span className="text-gray-600">{t('header.getDelivery')}</span>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-gray-600">24/7 Support</span>
-            <span className="text-medical-primary">📞 1800-123-4567</span>
+            <span className="text-gray-600">{t('header.support24')}</span>
+            <span className="text-medical-primary">{t('header.phone')}</span>
             <Select value={selectedLanguage.code} onValueChange={handleLanguageChange}>
               <SelectTrigger className="w-auto h-8 border-none bg-transparent">
                 <div className="flex items-center space-x-1">
@@ -56,7 +58,7 @@ export const Header = () => {
           {/* Location */}
           <div className="flex items-center space-x-2 text-gray-600">
             <MapPin className="w-4 h-4" />
-            <span className="text-sm">Deliver to</span>
+            <span className="text-sm">{t('header.deliverTo')}</span>
             <span className="font-medium text-gray-900">Mumbai 400001</span>
           </div>
           
@@ -65,7 +67,7 @@ export const Header = () => {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <Input 
-                placeholder="Search for lab tests, health checkups" 
+                placeholder={t('header.searchPlaceholder')}
                 className="pl-10 w-full"
               />
             </div>
@@ -75,15 +77,15 @@ export const Header = () => {
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="sm" className="flex items-center space-x-1">
               <Heart className="w-4 h-4" />
-              <span>Wishlist</span>
+              <span>{t('header.wishlist')}</span>
             </Button>
             <Button variant="ghost" size="sm" className="flex items-center space-x-1">
               <Bell className="w-4 h-4" />
-              <span>Notifications</span>
+              <span>{t('header.notifications')}</span>
             </Button>
             <Button variant="outline" size="sm" className="flex items-center space-x-1">
               <User className="w-4 h-4" />
-              <span>Sign In</span>
+              <span>{t('header.signIn')}</span>
             </Button>
           </div>
         </div>
@@ -91,12 +93,12 @@ export const Header = () => {
         {/* Navigation */}
         <nav className="border-t pt-3 pb-4">
           <ul className="flex space-x-8">
-            <li><a href="#" className="text-medical-primary font-medium hover:text-medical-dark">Lab Tests</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-medical-primary">Health Checkups</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-medical-primary">Popular Packages</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-medical-primary">Home Collection</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-medical-primary">Reports</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-medical-primary">Health Articles</a></li>
+            <li><a href="#" className="text-medical-primary font-medium hover:text-medical-dark">{t('nav.labTests')}</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.healthCheckups')}</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.popularPackages')}</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.homeCollection')}</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.reports')}</a></li>
+            <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.healthArticles')}</a></li>
           </ul>
         </nav>
       </div>

@@ -1,47 +1,50 @@
 
 import { Shield, Clock, Home, Award, Headphones, FileText } from 'lucide-react';
-
-const features = [
-  {
-    icon: Shield,
-    title: "NABL Certified Labs",
-    description: "All our partner labs are NABL certified ensuring highest quality standards"
-  },
-  {
-    icon: Home,
-    title: "Home Sample Collection",
-    description: "Trained phlebotomists collect samples from your home at your convenience"
-  },
-  {
-    icon: Clock,
-    title: "Fastest Reports",
-    description: "Get your reports within 6-24 hours via email, SMS, and our mobile app"
-  },
-  {
-    icon: Award,
-    title: "Best Prices",
-    description: "Up to 70% discount on lab tests with no compromise on quality"
-  },
-  {
-    icon: Headphones,
-    title: "24/7 Support",
-    description: "Round the clock customer support for all your queries and assistance"
-  },
-  {
-    icon: FileText,
-    title: "Digital Reports",
-    description: "Secure digital reports accessible anytime, anywhere with doctor consultations"
-  }
-];
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: Shield,
+      title: t('whyChoose.nabl.title'),
+      description: t('whyChoose.nabl.description')
+    },
+    {
+      icon: Home,
+      title: t('whyChoose.home.title'),
+      description: t('whyChoose.home.description')
+    },
+    {
+      icon: Clock,
+      title: t('whyChoose.fastest.title'),
+      description: t('whyChoose.fastest.description')
+    },
+    {
+      icon: Award,
+      title: t('whyChoose.prices.title'),
+      description: t('whyChoose.prices.description')
+    },
+    {
+      icon: Headphones,
+      title: t('whyChoose.support.title'),
+      description: t('whyChoose.support.description')
+    },
+    {
+      icon: FileText,
+      title: t('whyChoose.digital.title'),
+      description: t('whyChoose.digital.description')
+    }
+  ];
+
   return (
     <section className="py-12 bg-medical-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose LabTest+?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('whyChoose.title')}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We make lab testing simple, affordable, and reliable with our comprehensive services
+            {t('whyChoose.subtitle')}
           </p>
         </div>
         

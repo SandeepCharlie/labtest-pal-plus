@@ -1,7 +1,10 @@
 
 import { Heart, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
@@ -14,8 +17,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-4">
-              Your trusted partner for comprehensive lab testing and health checkups. 
-              Quality healthcare made accessible and affordable.
+              {t('footer.company')}
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-5 h-5 text-gray-400 hover:text-medical-primary cursor-pointer transition-colors" />
@@ -27,12 +29,12 @@ export const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Lab Tests</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Health Packages</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Home Collection</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Health Articles</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('nav.labTests')}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('packages.title')}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('nav.homeCollection')}</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('nav.healthArticles')}</a></li>
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Download Reports</a></li>
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Book Appointment</a></li>
             </ul>
@@ -40,7 +42,7 @@ export const Footer = () => {
           
           {/* Support */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Support</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.support')}</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Help Center</a></li>
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Contact Us</a></li>
@@ -53,7 +55,7 @@ export const Footer = () => {
           
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-medical-primary" />
@@ -77,12 +79,12 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 LabTest+. All rights reserved. Made with <Heart className="w-4 h-4 inline text-medical-primary" /> for better health.
+            {t('footer.copyright')}
           </p>
           <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-medical-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-medical-primary transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-400 hover:text-medical-primary transition-colors">Cookie Policy</a>
+            <a href="#" className="text-gray-400 hover:text-medical-primary transition-colors">{t('footer.privacyPolicy')}</a>
+            <a href="#" className="text-gray-400 hover:text-medical-primary transition-colors">{t('footer.termsOfService')}</a>
+            <a href="#" className="text-gray-400 hover:text-medical-primary transition-colors">{t('footer.cookiePolicy')}</a>
           </div>
         </div>
       </div>

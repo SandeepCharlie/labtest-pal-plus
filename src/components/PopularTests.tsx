@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Star, Clock, MapPin } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const popularTests = [
   {
@@ -56,12 +57,14 @@ const popularTests = [
 ];
 
 export const PopularTests = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Popular Lab Tests</h2>
-          <p className="text-gray-600">Most booked tests with accurate results</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('popularTests.title')}</h2>
+          <p className="text-gray-600">{t('popularTests.subtitle')}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -87,13 +90,13 @@ export const PopularTests = () => {
               <CardContent className="pt-0">
                 <div className="flex items-center space-x-2 mb-3">
                   <Clock className="w-4 h-4 text-medical-secondary" />
-                  <span className="text-sm text-gray-600">Report in {test.duration}</span>
+                  <span className="text-sm text-gray-600">{t('popularTests.reportIn')} {test.duration}</span>
                 </div>
                 
                 {test.homeCollection && (
                   <div className="flex items-center space-x-2 mb-4">
                     <MapPin className="w-4 h-4 text-medical-accent" />
-                    <span className="text-sm text-medical-accent font-medium">Home Collection Available</span>
+                    <span className="text-sm text-medical-accent font-medium">{t('popularTests.homeCollectionAvailable')}</span>
                   </div>
                 )}
                 
@@ -105,7 +108,7 @@ export const PopularTests = () => {
                 </div>
                 
                 <Button className="w-full bg-medical-primary hover:bg-medical-dark text-white">
-                  Book Now
+                  {t('popularTests.bookNow')}
                 </Button>
               </CardContent>
             </Card>
@@ -114,7 +117,7 @@ export const PopularTests = () => {
         
         <div className="text-center mt-8">
           <Button variant="outline" className="border-medical-primary text-medical-primary hover:bg-medical-primary hover:text-white">
-            View All Tests
+            {t('popularTests.viewAll')}
           </Button>
         </div>
       </div>

@@ -1,19 +1,21 @@
 
 import { Button } from '@/components/ui/button';
 import { Search, Calendar, MapPin } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-gradient-to-r from-medical-light to-white py-12">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex-1 pr-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Book Lab Tests & 
-              <span className="text-medical-primary"> Health Checkups</span>
+              {t('hero.title')}
             </h1>
             <p className="text-lg text-gray-600 mb-6">
-              Get accurate reports from certified labs. Home sample collection available.
+              {t('hero.subtitle')}
             </p>
             
             <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl">
@@ -21,20 +23,20 @@ export const HeroSection = () => {
                 <div className="flex items-center space-x-2 p-3 border rounded-md">
                   <Search className="w-5 h-5 text-medical-primary" />
                   <input 
-                    placeholder="Search tests or packages" 
+                    placeholder={t('hero.searchPlaceholder')}
                     className="flex-1 outline-none"
                   />
                 </div>
                 <div className="flex items-center space-x-2 p-3 border rounded-md">
                   <MapPin className="w-5 h-5 text-medical-primary" />
                   <input 
-                    placeholder="Select location" 
+                    placeholder={t('hero.locationPlaceholder')}
                     className="flex-1 outline-none"
                   />
                 </div>
                 <Button className="bg-medical-primary hover:bg-medical-dark text-white">
                   <Calendar className="w-4 h-4 mr-2" />
-                  Book Now
+                  {t('hero.bookNow')}
                 </Button>
               </div>
             </div>
@@ -42,15 +44,15 @@ export const HeroSection = () => {
             <div className="flex items-center space-x-6 mt-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-medical-primary">50L+</div>
-                <div className="text-sm text-gray-600">Tests Booked</div>
+                <div className="text-sm text-gray-600">{t('hero.testsBooked')}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-medical-primary">1000+</div>
-                <div className="text-sm text-gray-600">Certified Labs</div>
+                <div className="text-sm text-gray-600">{t('hero.certifiedLabs')}</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-medical-primary">24hrs</div>
-                <div className="text-sm text-gray-600">Report Delivery</div>
+                <div className="text-sm text-gray-600">{t('hero.reportDelivery')}</div>
               </div>
             </div>
           </div>
