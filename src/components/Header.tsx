@@ -1,9 +1,20 @@
 
-import { Search, MapPin, User, Heart, Bell } from 'lucide-react';
+import { Search, MapPin, User, Heart, Bell, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export const Header = () => {
+  const { selectedLanguage, setSelectedLanguage, languages } = useLanguage();
+
+  const handleLanguageChange = (languageCode: string) => {
+    const language = languages.find(lang => lang.code === languageCode);
+    if (language) {
+      setSelectedLanguage(language);
+    }
+  };
+
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="container mx-auto px-4">
@@ -15,6 +26,21 @@ export const Header = () => {
           <div className="flex items-center space-x-4">
             <span className="text-gray-600">24/7 Support</span>
             <span className="text-medical-primary">📞 1800-123-4567</span>
+            <Select value={selectedLanguage.code} onValueChange={handleLanguageChange}>
+              <SelectTrigger className="w-auto h-8 border-none bg-transparent">
+                <div className="flex items-center space-x-1">
+                  <Globe className="w-3 h-3" />
+                  <SelectValue />
+                </div>
+              </SelectTrigger>
+              <SelectContent>
+                {languages.map((language) => (
+                  <SelectItem key={language.code} value={language.code}>
+                    {language.nativeName}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
         
