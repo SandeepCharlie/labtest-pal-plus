@@ -9,25 +9,9 @@ type Language = {
 
 const languages: Language[] = [
   { code: 'en', name: 'English', nativeName: 'English' },
+  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు' },
   { code: 'hi', name: 'Hindi', nativeName: 'हिंदी' },
   { code: 'mr', name: 'Marathi', nativeName: 'मराठी' },
-  { code: 'gu', name: 'Gujarati', nativeName: 'ગુજરાતી' },
-  { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்' },
-  { code: 'te', name: 'Telugu', nativeName: 'తెలుగు' },
-  { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ' },
-  { code: 'bn', name: 'Bengali', nativeName: 'বাংলা' },
-  { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം' },
-  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ' },
-  { code: 'or', name: 'Odia', nativeName: 'ଓଡ଼ିଆ' },
-  { code: 'as', name: 'Assamese', nativeName: 'অসমীয়া' },
-  { code: 'ur', name: 'Urdu', nativeName: 'اردو' },
-  { code: 'bho', name: 'Bhojpuri', nativeName: 'भोजपुरी' },
-  { code: 'raj', name: 'Rajasthani', nativeName: 'राजस्थानी' },
-  { code: 'mai', name: 'Maithili', nativeName: 'मैथिली' },
-  { code: 'mag', name: 'Magahi', nativeName: 'मगही' },
-  { code: 'ne', name: 'Nepali', nativeName: 'नेपाली' },
-  { code: 'kok', name: 'Konkani', nativeName: 'कोंकणी' },
-  { code: 'sd', name: 'Sindhi', nativeName: 'سنڌي' },
 ];
 
 type LanguageContextType = {
