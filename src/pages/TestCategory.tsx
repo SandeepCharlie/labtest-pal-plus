@@ -117,7 +117,7 @@ const TestCategory = () => {
   const { t } = useTranslation();
 
   const tests = testData[categoryId || ''] || [];
-  const categoryTitle = categoryId?.charAt(0).toUpperCase() + categoryId?.slice(1) + ' Health Tests';
+  const categoryTitle = t(`test.categories.${categoryId}HealthTests` as any);
 
   const handleBookTest = (testId: string) => {
     navigate(`/test/${testId}`);
@@ -131,7 +131,7 @@ const TestCategory = () => {
         <div className="container mx-auto px-4">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">{categoryTitle}</h1>
-            <p className="text-gray-600">Choose from our comprehensive range of health tests</p>
+            <p className="text-gray-600">{t('testCategory.chooseFromTests')}</p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

@@ -57,8 +57,8 @@ const TestDetail = () => {
       <div className="min-h-screen">
         <Header />
         <div className="container mx-auto px-4 py-12 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Test not found</h1>
-          <Button onClick={() => navigate('/')}>Go back to home</Button>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">{t('testDetail.testNotFound')}</h1>
+          <Button onClick={() => navigate('/')}>{t('testDetail.goBackHome')}</Button>
         </div>
         <Footer />
       </div>

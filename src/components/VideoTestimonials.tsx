@@ -49,8 +49,8 @@ export const VideoTestimonials = () => {
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Patient Testimonials</h2>
-          <p className="text-gray-600 text-lg">Hear what our satisfied customers have to say</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('testimonials.title')}</h2>
+          <p className="text-gray-600 text-lg">{t('testimonials.subtitle')}</p>
         </div>
         
         <Carousel className="w-full max-w-5xl mx-auto">
