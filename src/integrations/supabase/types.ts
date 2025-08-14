@@ -14,6 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
+      bookings: {
+        Row: {
+          address: string
+          booking_date: string
+          booking_id: string
+          booking_status: string | null
+          booking_time: string
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          landmark: string | null
+          payment_method: string
+          payment_status: string | null
+          phone: string
+          test_id: string
+          test_name: string
+          test_price: number
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          address: string
+          booking_date: string
+          booking_id: string
+          booking_status?: string | null
+          booking_time: string
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          landmark?: string | null
+          payment_method: string
+          payment_status?: string | null
+          phone: string
+          test_id: string
+          test_name: string
+          test_price: number
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          address?: string
+          booking_date?: string
+          booking_id?: string
+          booking_status?: string | null
+          booking_time?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          landmark?: string | null
+          payment_method?: string
+          payment_status?: string | null
+          phone?: string
+          test_id?: string
+          test_name?: string
+          test_price?: number
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           address: string | null
@@ -56,12 +119,45 @@ export type Database = {
         }
         Relationships: []
       }
+      test_time_restrictions: {
+        Row: {
+          created_at: string
+          end_time: string
+          is_fasting_required: boolean | null
+          preparation_hours: number | null
+          start_time: string
+          test_id: string
+          test_name: string
+        }
+        Insert: {
+          created_at?: string
+          end_time: string
+          is_fasting_required?: boolean | null
+          preparation_hours?: number | null
+          start_time: string
+          test_id: string
+          test_name: string
+        }
+        Update: {
+          created_at?: string
+          end_time?: string
+          is_fasting_required?: boolean | null
+          preparation_hours?: number | null
+          start_time?: string
+          test_id?: string
+          test_name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      generate_booking_id: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
