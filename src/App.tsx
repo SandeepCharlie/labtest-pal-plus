@@ -9,6 +9,7 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import Index from "./pages/Index";
 import TestCategory from "./pages/TestCategory";
 import TestDetail from "./pages/TestDetail";
+import BookingPage from "./pages/BookingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const AppContent = () => {
           <Route path="/" element={<Index />} />
           <Route path="/tests/:categoryId" element={<TestCategory />} />
           <Route path="/test/:testId" element={<TestDetail />} />
+          <Route path="/booking" element={<BookingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -207,4 +207,69 @@ export const enTranslations: TranslationData = {
   'symptoms.cold': 'Cold',
   'symptoms.dizziness': 'Dizziness',
   'symptoms.back-pain': 'Back Pain',
+
+  // Booking page
+  'booking.title': 'Book Your Test',
+  'booking.steps.personalDetails': 'Personal Details',
+  'booking.steps.dateTime': 'Date & Time',
+  'booking.steps.payment': 'Payment',
+  'booking.steps.confirmation': 'Confirmation',
+  
+  // Personal Details
+  'booking.personalDetails.fullName': 'Full Name',
+  'booking.personalDetails.fullNamePlaceholder': 'Enter your full name',
+  'booking.personalDetails.phone': 'Mobile Number',
+  'booking.personalDetails.phonePlaceholder': 'Enter 10-digit mobile number',
+  'booking.personalDetails.email': 'Email Address',
+  'booking.personalDetails.emailPlaceholder': 'Enter your email',
+  'booking.personalDetails.address': 'Complete Address',
+  'booking.personalDetails.addressPlaceholder': 'Enter your complete address',
+  'booking.personalDetails.landmark': 'Landmark',
+  'booking.personalDetails.landmarkPlaceholder': 'Enter nearby landmark (optional)',
+  
+  // Date & Time
+  'booking.dateTime.selectDate': 'Select Date',
+  'booking.dateTime.pickDate': 'Pick a date',
+  'booking.dateTime.selectTime': 'Select Time',
+  'booking.dateTime.idealTime': 'Ideal collection time',
+  'booking.dateTime.fastingRequired': 'Fasting required',
+  'booking.dateTime.hours': 'hours',
+  'booking.dateTime.invalidTime': 'Selected time is not valid for this test. Please choose from available slots.',
+  
+  // Payment
+  'booking.payment.selectMethod': 'Select Payment Method',
+  'booking.payment.online': 'Pay Online',
+  'booking.payment.onlineDesc': 'UPI, Card, NetBanking',
+  'booking.payment.cash': 'Pay at Home',
+  'booking.payment.cashDesc': 'Cash/UPI on collection',
+  
+  // Confirmation
+  'booking.confirmation.title': 'Booking Confirmed!',
+  'booking.confirmation.description': 'Your test has been successfully booked.',
+  'booking.confirmation.bookingId': 'Booking ID',
+  'booking.confirmation.testName': 'Test Name',
+  'booking.confirmation.date': 'Date',
+  'booking.confirmation.time': 'Time',
+  'booking.confirmation.amount': 'Amount',
+  'booking.confirmation.backToHome': 'Back to Home',
+  'booking.confirmation.callSupport': 'Call Support',
+  
+  // Navigation
+  'booking.navigation.previous': 'Previous',
+  'booking.navigation.next': 'Next',
+  'booking.navigation.submit': 'Confirm Booking',
+  'booking.navigation.submitting': 'Submitting...',
+  
+  // Validation
+  'booking.validation.error': 'Validation Error',
+  'booking.validation.fillRequired': 'Please fill all required fields',
+  
+  // Messages
+  'booking.success.title': 'Success!',
+  'booking.success.description': 'Your booking has been confirmed',
+  'booking.error.title': 'Error',
+  'booking.error.description': 'Unable to create booking. Please try again.',
+
+  // Common
+  'common.back': 'Back',
 };

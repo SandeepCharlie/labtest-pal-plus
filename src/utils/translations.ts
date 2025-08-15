@@ -200,6 +200,62 @@ export type TranslationKey =
   | 'symptoms.cough'
   | 'symptoms.cold'
   | 'symptoms.dizziness'
-  | 'symptoms.back-pain';
+  | 'symptoms.back-pain'
+  // Booking page
+  | 'booking.title'
+  | 'booking.steps.personalDetails'
+  | 'booking.steps.dateTime'
+  | 'booking.steps.payment'
+  | 'booking.steps.confirmation'
+  // Personal Details
+  | 'booking.personalDetails.fullName'
+  | 'booking.personalDetails.fullNamePlaceholder'
+  | 'booking.personalDetails.phone'
+  | 'booking.personalDetails.phonePlaceholder'
+  | 'booking.personalDetails.email'
+  | 'booking.personalDetails.emailPlaceholder'
+  | 'booking.personalDetails.address'
+  | 'booking.personalDetails.addressPlaceholder'
+  | 'booking.personalDetails.landmark'
+  | 'booking.personalDetails.landmarkPlaceholder'
+  // Date & Time
+  | 'booking.dateTime.selectDate'
+  | 'booking.dateTime.pickDate'
+  | 'booking.dateTime.selectTime'
+  | 'booking.dateTime.idealTime'
+  | 'booking.dateTime.fastingRequired'
+  | 'booking.dateTime.hours'
+  | 'booking.dateTime.invalidTime'
+  // Payment
+  | 'booking.payment.selectMethod'
+  | 'booking.payment.online'
+  | 'booking.payment.onlineDesc'
+  | 'booking.payment.cash'
+  | 'booking.payment.cashDesc'
+  // Confirmation
+  | 'booking.confirmation.title'
+  | 'booking.confirmation.description'
+  | 'booking.confirmation.bookingId'
+  | 'booking.confirmation.testName'
+  | 'booking.confirmation.date'
+  | 'booking.confirmation.time'
+  | 'booking.confirmation.amount'
+  | 'booking.confirmation.backToHome'
+  | 'booking.confirmation.callSupport'
+  // Navigation
+  | 'booking.navigation.previous'
+  | 'booking.navigation.next'
+  | 'booking.navigation.submit'
+  | 'booking.navigation.submitting'
+  // Validation
+  | 'booking.validation.error'
+  | 'booking.validation.fillRequired'
+  // Messages
+  | 'booking.success.title'
+  | 'booking.success.description'
+  | 'booking.error.title'
+  | 'booking.error.description'
+  // Common
+  | 'common.back';
 
 export type TranslationData = Record<TranslationKey, string>;

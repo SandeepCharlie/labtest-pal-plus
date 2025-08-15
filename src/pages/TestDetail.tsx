@@ -66,8 +66,12 @@ const TestDetail = () => {
   }
 
   const handleBookNow = () => {
-    // In real app, this would integrate with booking system
-    alert('Booking functionality would be integrated here');
+    const params = new URLSearchParams({
+      testId: testId || '',
+      testName: test.name,
+      testPrice: test.price.toString()
+    });
+    navigate(`/booking?${params.toString()}`);
   };
 
   return (

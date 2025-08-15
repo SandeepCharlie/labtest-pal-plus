@@ -207,4 +207,69 @@ export const mrTranslations: TranslationData = {
   'symptoms.cold': 'सर्दी',
   'symptoms.dizziness': 'चक्कर येणे',
   'symptoms.back-pain': 'पाठदुखी',
+
+  // Booking page
+  'booking.title': 'तुमची चाचणी बुक करा',
+  'booking.steps.personalDetails': 'वैयक्तिक तपशील',
+  'booking.steps.dateTime': 'दिनांक आणि वेळ',
+  'booking.steps.payment': 'पेमेंट',
+  'booking.steps.confirmation': 'पुष्टीकरण',
+  
+  // Personal Details
+  'booking.personalDetails.fullName': 'पूर्ण नाव',
+  'booking.personalDetails.fullNamePlaceholder': 'तुमचे पूर्ण नाव टाका',
+  'booking.personalDetails.phone': 'मोबाईल नंबर',
+  'booking.personalDetails.phonePlaceholder': '10 अंकी मोबाईल नंबर टाका',
+  'booking.personalDetails.email': 'ईमेल पत्ता',
+  'booking.personalDetails.emailPlaceholder': 'तुमचा ईमेल टाका',
+  'booking.personalDetails.address': 'पूर्ण पत्ता',
+  'booking.personalDetails.addressPlaceholder': 'तुमचा पूर्ण पत्ता टाका',
+  'booking.personalDetails.landmark': 'खुणा',
+  'booking.personalDetails.landmarkPlaceholder': 'जवळची खुणा टाका (पर्यायी)',
+  
+  // Date & Time
+  'booking.dateTime.selectDate': 'दिनांक निवडा',
+  'booking.dateTime.pickDate': 'एक दिनांक निवडा',
+  'booking.dateTime.selectTime': 'वेळ निवडा',
+  'booking.dateTime.idealTime': 'आदर्श संकलन वेळ',
+  'booking.dateTime.fastingRequired': 'उपास आवश्यक',
+  'booking.dateTime.hours': 'तास',
+  'booking.dateTime.invalidTime': 'निवडलेली वेळ या चाचणीसाठी वैध नाही। कृपया उपलब्ध स्लॉटमधून निवडा.',
+  
+  // Payment
+  'booking.payment.selectMethod': 'पेमेंट पद्धत निवडा',
+  'booking.payment.online': 'ऑनलाइन पेमेंट',
+  'booking.payment.onlineDesc': 'UPI, कार्ड, नेटबँकिंग',
+  'booking.payment.cash': 'घरी पेमेंट',
+  'booking.payment.cashDesc': 'संकलनावर रोख/UPI',
+  
+  // Confirmation
+  'booking.confirmation.title': 'बुकिंग पुष्ट!',
+  'booking.confirmation.description': 'तुमची चाचणी यशस्वीरित्या बुक झाली आहे.',
+  'booking.confirmation.bookingId': 'बुकिंग आयडी',
+  'booking.confirmation.testName': 'चाचणीचे नाव',
+  'booking.confirmation.date': 'दिनांक',
+  'booking.confirmation.time': 'वेळ',
+  'booking.confirmation.amount': 'रक्कम',
+  'booking.confirmation.backToHome': 'होमवर परत या',
+  'booking.confirmation.callSupport': 'सपोर्टला कॉल करा',
+  
+  // Navigation
+  'booking.navigation.previous': 'मागील',
+  'booking.navigation.next': 'पुढील',
+  'booking.navigation.submit': 'बुकिंग पुष्ट करा',
+  'booking.navigation.submitting': 'सबमिट करत आहे...',
+  
+  // Validation
+  'booking.validation.error': 'सत्यापन त्रुटी',
+  'booking.validation.fillRequired': 'कृपया सर्व आवश्यक फील्ड भरा',
+  
+  // Messages
+  'booking.success.title': 'यश!',
+  'booking.success.description': 'तुमची बुकिंग पुष्ट झाली आहे',
+  'booking.error.title': 'त्रुटी',
+  'booking.error.description': 'बुकिंग तयार करू शकत नाही. कृपया पुन्हा प्रयत्न करा.',
+
+  // Common
+  'common.back': 'मागे',
 };

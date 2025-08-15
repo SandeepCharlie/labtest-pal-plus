@@ -206,4 +206,69 @@ export const teTranslations: TranslationData = {
   'symptoms.cold': 'జలుబు',
   'symptoms.dizziness': 'తలతిరుగులు',
   'symptoms.back-pain': 'వెన్ను నొప్పి',
+
+  // Booking page
+  'booking.title': 'మీ పరీక్ష బుక్ చేయండి',
+  'booking.steps.personalDetails': 'వ్యక్తిగత వివరాలు',
+  'booking.steps.dateTime': 'తేదీ మరియు సమయం',
+  'booking.steps.payment': 'చెల్లింపు',
+  'booking.steps.confirmation': 'నిర్ధారణ',
+  
+  // Personal Details
+  'booking.personalDetails.fullName': 'పూర్తి పేరు',
+  'booking.personalDetails.fullNamePlaceholder': 'మీ పూర్తి పేరు నమోదు చేయండి',
+  'booking.personalDetails.phone': 'మొబైల్ నంబర్',
+  'booking.personalDetails.phonePlaceholder': '10 అంకెల మొబైల్ నంబర్ నమోదు చేయండి',
+  'booking.personalDetails.email': 'ఇమెయిల్ చిరునామా',
+  'booking.personalDetails.emailPlaceholder': 'మీ ఇమెయిల్ నమోదు చేయండి',
+  'booking.personalDetails.address': 'పూర్తి చిరునామా',
+  'booking.personalDetails.addressPlaceholder': 'మీ పూర్తి చిరునామా నమోదు చేయండి',
+  'booking.personalDetails.landmark': 'ల్యాండ్‌మార్క్',
+  'booking.personalDetails.landmarkPlaceholder': 'సమీపంలోని ల్యాండ్‌మార్క్ నమోదు చేయండి (ఐచ్ఛికం)',
+  
+  // Date & Time
+  'booking.dateTime.selectDate': 'తేదీ ఎంచుకోండి',
+  'booking.dateTime.pickDate': 'ఒక తేదీ ఎంచుకోండి',
+  'booking.dateTime.selectTime': 'సమయం ఎంచుకోండి',
+  'booking.dateTime.idealTime': 'ఆదర్శ సేకరణ సమయం',
+  'booking.dateTime.fastingRequired': 'ఉపవాసం అవసరం',
+  'booking.dateTime.hours': 'గంటలు',
+  'booking.dateTime.invalidTime': 'ఎంచుకున్న సమయం ఈ పరీక్షకు చెల్లదు. దయచేసి అందుబాటులో ఉన్న స్లాట్లలో నుండి ఎంచుకోండి.',
+  
+  // Payment
+  'booking.payment.selectMethod': 'చెల్లింపు పద్ధతిని ఎంచుకోండి',
+  'booking.payment.online': 'ఆన్‌లైన్ చెల్లింపు',
+  'booking.payment.onlineDesc': 'UPI, కార్డ్, నెట్బ్యాంకింగ్',
+  'booking.payment.cash': 'ఇంటిలో చెల్లింపు',
+  'booking.payment.cashDesc': 'సేకరణ సమయంలో నగదు/UPI',
+  
+  // Confirmation
+  'booking.confirmation.title': 'బుకింగ్ నిర్ధారించబడింది!',
+  'booking.confirmation.description': 'మీ పరీక్ష విజయవంతంగా బుక్ చేయబడింది.',
+  'booking.confirmation.bookingId': 'బుకింగ్ ID',
+  'booking.confirmation.testName': 'పరీక్ష పేరు',
+  'booking.confirmation.date': 'తేదీ',
+  'booking.confirmation.time': 'సమయం',
+  'booking.confirmation.amount': 'మొత్తం',
+  'booking.confirmation.backToHome': 'హోమ్‌కు తిరిగి వెళ్లండి',
+  'booking.confirmation.callSupport': 'సపోర్ట్‌కు కాల్ చేయండి',
+  
+  // Navigation
+  'booking.navigation.previous': 'మునుపటి',
+  'booking.navigation.next': 'తదుపరి',
+  'booking.navigation.submit': 'బుకింగ్ నిర్ధారించండి',
+  'booking.navigation.submitting': 'సమర్పిస్తున్నాము...',
+  
+  // Validation
+  'booking.validation.error': 'ధృవీకరణ లోపం',
+  'booking.validation.fillRequired': 'దయచేసి అన్ని అవసరమైన ఫీల్డ్లను నింపండి',
+  
+  // Messages
+  'booking.success.title': 'విజయం!',
+  'booking.success.description': 'మీ బుకింగ్ నిర్ధారించబడింది',
+  'booking.error.title': 'లోపం',
+  'booking.error.description': 'బుకింగ్ సృష్టించలేకపోయాము. దయచేసి మళ్లీ ప్రయత్నించండి.',
+
+  // Common
+  'common.back': 'వెనుకకు',
 };
