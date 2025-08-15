@@ -25,10 +25,13 @@ export type Database = {
           email: string
           full_name: string
           id: string
+          lab_id: string | null
+          lab_name: string | null
           landmark: string | null
           payment_method: string
           payment_status: string | null
           phone: string
+          selected_city: string | null
           test_id: string
           test_name: string
           test_price: number
@@ -45,10 +48,13 @@ export type Database = {
           email: string
           full_name: string
           id?: string
+          lab_id?: string | null
+          lab_name?: string | null
           landmark?: string | null
           payment_method: string
           payment_status?: string | null
           phone: string
+          selected_city?: string | null
           test_id: string
           test_name: string
           test_price: number
@@ -65,15 +71,127 @@ export type Database = {
           email?: string
           full_name?: string
           id?: string
+          lab_id?: string | null
+          lab_name?: string | null
           landmark?: string | null
           payment_method?: string
           payment_status?: string | null
           phone?: string
+          selected_city?: string | null
           test_id?: string
           test_name?: string
           test_price?: number
           updated_at?: string
           user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_lab_id_fkey"
+            columns: ["lab_id"]
+            isOneToOne: false
+            referencedRelation: "labs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      lab_tests: {
+        Row: {
+          created_at: string
+          id: string
+          is_available: boolean | null
+          lab_id: string
+          price: number
+          test_id: string
+          test_name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_available?: boolean | null
+          lab_id: string
+          price: number
+          test_id: string
+          test_name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_available?: boolean | null
+          lab_id?: string
+          price?: number
+          test_id?: string
+          test_name?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lab_tests_lab_id_fkey"
+            columns: ["lab_id"]
+            isOneToOne: false
+            referencedRelation: "labs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      labs: {
+        Row: {
+          address: string
+          certifications: string[] | null
+          city: string
+          created_at: string
+          email: string | null
+          id: string
+          is_active: boolean | null
+          lab_name: string
+          latitude: number | null
+          logo_url: string | null
+          longitude: number | null
+          phone: string | null
+          rating: number | null
+          review_count: number | null
+          timings: string
+          updated_at: string
+          website: string | null
+        }
+        Insert: {
+          address: string
+          certifications?: string[] | null
+          city: string
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_active?: boolean | null
+          lab_name: string
+          latitude?: number | null
+          logo_url?: string | null
+          longitude?: number | null
+          phone?: string | null
+          rating?: number | null
+          review_count?: number | null
+          timings?: string
+          updated_at?: string
+          website?: string | null
+        }
+        Update: {
+          address?: string
+          certifications?: string[] | null
+          city?: string
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_active?: boolean | null
+          lab_name?: string
+          latitude?: number | null
+          logo_url?: string | null
+          longitude?: number | null
+          phone?: string | null
+          rating?: number | null
+          review_count?: number | null
+          timings?: string
+          updated_at?: string
+          website?: string | null
         }
         Relationships: []
       }
