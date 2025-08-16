@@ -71,7 +71,7 @@ const TestDetail = () => {
       testName: test.name,
       testPrice: test.price.toString()
     });
-    navigate(`/booking?${params.toString()}`);
+    navigate(`/lab-selection?${params.toString()}`);
   };
 
   return (
