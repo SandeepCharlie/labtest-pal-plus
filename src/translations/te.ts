@@ -300,4 +300,33 @@ export const teTranslations: TranslationData = {
 
   // Common
   'common.back': 'వెనుకకు',
+
+  // Confirmation Page
+  'confirmation.successTitle': 'మీ పరీక్ష విజయవంతంగా బుక్ చేయబడింది!',
+  'confirmation.successMessage': 'అపాయింట్మెంట్ను ధృవీకరించడానికి మేము త్వరలో మిమ్మల్ని సంప్రదిస్తాము.',
+  'confirmation.bookingDetails': 'బుకింగ్ వివరాలు',
+  'confirmation.bookingId': 'బుకింగ్ ID',
+  'confirmation.testName': 'పరీక్ష పేరు',
+  'confirmation.city': 'నగరం',
+  'confirmation.laboratory': 'ప్రయోగశాల',
+  'confirmation.dateTime': 'తేదీ మరియు సమయం',
+  'confirmation.trackNow': 'ఇప్పుడు ట్రాక్ చేయండి',
+  'confirmation.backToHome': 'హోమ్కి తిరిగి వెళ్ళండి',
+  'confirmation.additionalInfo': 'మీరు 24 గంటలలో ధృవీకరణ కాల్ను అందుకుంటారు.',
+
+  // Tracking Page
+  'tracking.title': 'లైవ్ ట్రాకింగ్',
+  'tracking.status.onTheWay': 'ఏజెంట్ వస్తున్నారు',
+  'tracking.liveLocation': 'లైవ్ లొకేషన్',
+  'tracking.agentLocation': 'ఏజెంట్',
+  'tracking.yourLocation': 'మీ లొకేషన్',
+  'tracking.estimatedArrival': 'అంచనా రాక',
+  'tracking.minutes': 'నిమిషాలు',
+  'tracking.agentDetails': 'ఏజెంట్ వివరాలు',
+  'tracking.rating': 'రేటింగ్',
+  'tracking.callAgent': 'ఏజెంట్ను కాల్ చేయండి',
+  'tracking.bookingInfo': 'బుకింగ్ సమాచారం',
+  'tracking.bookingId': 'బుకింగ్ ID',
+  'tracking.testName': 'పరీక్ష',
+  'tracking.lab': 'ప్రయోగశాల',
 };

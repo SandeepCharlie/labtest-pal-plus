@@ -301,4 +301,33 @@ export const mrTranslations: TranslationData = {
 
   // Common
   'common.back': 'मागे',
+
+  // Confirmation Page
+  'confirmation.successTitle': 'तुमची चाचणी यशस्वीरित्या बुक झाली आहे!',
+  'confirmation.successMessage': 'अपॉइंटमेंटची पुष्टी करण्यासाठी आम्ही लवकरच तुमच्याशी संपर्क साधू.',
+  'confirmation.bookingDetails': 'बुकिंग तपशील',
+  'confirmation.bookingId': 'बुकिंग आयडी',
+  'confirmation.testName': 'चाचणीचे नाव',
+  'confirmation.city': 'शहर',
+  'confirmation.laboratory': 'प्रयोगशाळा',
+  'confirmation.dateTime': 'दिनांक आणि वेळ',
+  'confirmation.trackNow': 'आता ट्रॅक करा',
+  'confirmation.backToHome': 'होमवर परत जा',
+  'confirmation.additionalInfo': 'तुम्हाला 24 तासांत पुष्टीकरण कॉल मिळेल.',
+
+  // Tracking Page
+  'tracking.title': 'लाइव्ह ट्रॅकिंग',
+  'tracking.status.onTheWay': 'एजंट येत आहे',
+  'tracking.liveLocation': 'लाइव्ह लोकेशन',
+  'tracking.agentLocation': 'एजंट',
+  'tracking.yourLocation': 'तुमचे स्थान',
+  'tracking.estimatedArrival': 'अंदाजित आगमन',
+  'tracking.minutes': 'मिनिटे',
+  'tracking.agentDetails': 'एजंट तपशील',
+  'tracking.rating': 'रेटिंग',
+  'tracking.callAgent': 'एजंटला कॉल करा',
+  'tracking.bookingInfo': 'बुकिंग माहिती',
+  'tracking.bookingId': 'बुकिंग आयडी',
+  'tracking.testName': 'चाचणी',
+  'tracking.lab': 'प्रयोगशाळा',
 };

@@ -301,4 +301,33 @@ export const hiTranslations: TranslationData = {
 
   // Common
   'common.back': 'वापस',
+
+  // Confirmation Page
+  'confirmation.successTitle': 'आपका टेस्ट सफलतापूर्वक बुक हो गया है!',
+  'confirmation.successMessage': 'हम जल्द ही अपॉइंटमेंट की पुष्टि करने के लिए आपसे संपर्क करेंगे।',
+  'confirmation.bookingDetails': 'बुकिंग विवरण',
+  'confirmation.bookingId': 'बुकिंग आईडी',
+  'confirmation.testName': 'टेस्ट का नाम',
+  'confirmation.city': 'शहर',
+  'confirmation.laboratory': 'प्रयोगशाला',
+  'confirmation.dateTime': 'दिनांक और समय',
+  'confirmation.trackNow': 'अभी ट्रैक करें',
+  'confirmation.backToHome': 'होम पर वापस जाएं',
+  'confirmation.additionalInfo': 'आपको 24 घंटे के भीतर एक पुष्टिकरण कॉल प्राप्त होगी।',
+
+  // Tracking Page
+  'tracking.title': 'लाइव ट्रैकिंग',
+  'tracking.status.onTheWay': 'एजेंट रास्ते में है',
+  'tracking.liveLocation': 'लाइव स्थान',
+  'tracking.agentLocation': 'एजेंट',
+  'tracking.yourLocation': 'आपका स्थान',
+  'tracking.estimatedArrival': 'अनुमानित आगमन',
+  'tracking.minutes': 'मिनट',
+  'tracking.agentDetails': 'एजेंट विवरण',
+  'tracking.rating': 'रेटिंग',
+  'tracking.callAgent': 'एजेंट को कॉल करें',
+  'tracking.bookingInfo': 'बुकिंग जानकारी',
+  'tracking.bookingId': 'बुकिंग आईडी',
+  'tracking.testName': 'टेस्ट',
+  'tracking.lab': 'प्रयोगशाला',
 };

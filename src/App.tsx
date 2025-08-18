@@ -11,6 +11,8 @@ import TestCategory from "./pages/TestCategory";
 import TestDetail from "./pages/TestDetail";
 import BookingPage from "./pages/BookingPage";
 import LabSelectionPage from "./pages/LabSelectionPage";
+import BookingConfirmationPage from "./pages/BookingConfirmationPage";
+import TrackingPage from "./pages/TrackingPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const AppContent = () => {
           <Route path="/test/:testId" element={<TestDetail />} />
         <Route path="/lab-selection" element={<LabSelectionPage />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/booking-confirmation" element={<BookingConfirmationPage />} />
+        <Route path="/tracking" element={<TrackingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

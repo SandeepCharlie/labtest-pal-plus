@@ -172,7 +172,18 @@ const BookingPage = () => {
       if (error) throw error;
 
       setBookingId(data.booking_id);
-      setCurrentStep(4);
+      
+      // Navigate to confirmation page with booking details
+      navigate('/booking-confirmation', {
+        state: {
+          testName: bookingData.testName,
+          city: searchParams.get('selectedCity') || '',
+          labName: searchParams.get('labName') || '',
+          date: format(bookingData.date!, 'dd/MM/yyyy'),
+          time: bookingData.time,
+          bookingId: data.booking_id
+        }
+      });
       
       toast({
         title: t('booking.success.title'),

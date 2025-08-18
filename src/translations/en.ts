@@ -301,4 +301,33 @@ export const enTranslations: TranslationData = {
 
   // Common
   'common.back': 'Back',
+
+  // Confirmation Page
+  'confirmation.successTitle': 'Your test has been booked successfully!',
+  'confirmation.successMessage': 'We will contact you shortly to confirm the appointment.',
+  'confirmation.bookingDetails': 'Booking Details',
+  'confirmation.bookingId': 'Booking ID',
+  'confirmation.testName': 'Test Name',
+  'confirmation.city': 'City',
+  'confirmation.laboratory': 'Laboratory',
+  'confirmation.dateTime': 'Date & Time',
+  'confirmation.trackNow': 'Track Now',
+  'confirmation.backToHome': 'Back to Home',
+  'confirmation.additionalInfo': 'You will receive a confirmation call within 24 hours.',
+
+  // Tracking Page
+  'tracking.title': 'Live Tracking',
+  'tracking.status.onTheWay': 'Agent on the way',
+  'tracking.liveLocation': 'Live Location',
+  'tracking.agentLocation': 'Agent',
+  'tracking.yourLocation': 'Your Location',
+  'tracking.estimatedArrival': 'Estimated Arrival',
+  'tracking.minutes': 'minutes',
+  'tracking.agentDetails': 'Agent Details',
+  'tracking.rating': 'rating',
+  'tracking.callAgent': 'Call Agent',
+  'tracking.bookingInfo': 'Booking Information',
+  'tracking.bookingId': 'Booking ID',
+  'tracking.testName': 'Test',
+  'tracking.lab': 'Laboratory',
 };
