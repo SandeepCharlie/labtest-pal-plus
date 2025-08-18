@@ -4,125 +4,211 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, MapPin, Clock, Star, Phone, Mail, Award } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
-import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
 
 interface Lab {
   id: string;
-  lab_name: string;
+  name: string;
+  rating: number;
+  distance: string;
   city: string;
   address: string;
-  logo_url?: string;
-  rating: number;
-  review_count: number;
-  phone?: string;
-  email?: string;
-  website?: string;
-  certifications?: string[];
+  phone: string;
+  email: string;
   timings: string;
-  price: number;
-  distance?: string;
+  certifications: string[];
 }
+
+// Hardcoded tier-2 cities in India
+const TIER_2_CITIES = [
+  'Lucknow',
+  'Jaipur', 
+  'Bhopal',
+  'Coimbatore',
+  'Nagpur',
+  'Visakhapatnam',
+  'Indore',
+  'Patna',
+  'Vadodara',
+  'Ludhiana',
+  'Agra',
+  'Nashik',
+  'Madurai',
+  'Kochi',
+  'Thiruvananthapuram'
+];
+
+// Hardcoded lab data for each city
+const LABS_DATA: Record<string, Lab[]> = {
+  'Lucknow': [
+    {
+      id: '1',
+      name: 'HealthFirst Diagnostics',
+      rating: 4.5,
+      distance: '2.1 km away',
+      city: 'Lucknow',
+      address: 'Gomti Nagar, Lucknow',
+      phone: '+91 9876543210',
+      email: 'contact@healthfirst.com',
+      timings: '7:00 AM - 9:00 PM',
+      certifications: ['NABL', 'ISO 15189']
+    },
+    {
+      id: '2',
+      name: 'Metro Lab Services',
+      rating: 4.2,
+      distance: '3.5 km away',
+      city: 'Lucknow',
+      address: 'Hazratganj, Lucknow',
+      phone: '+91 9876543211',
+      email: 'info@metrolab.com',
+      timings: '6:30 AM - 10:00 PM',
+      certifications: ['NABL', 'CAP']
+    },
+    {
+      id: '3',
+      name: 'CityLife Diagnostics',
+      rating: 4.7,
+      distance: '1.8 km away',
+      city: 'Lucknow',
+      address: 'Alambagh, Lucknow',
+      phone: '+91 9876543212',
+      email: 'support@citylife.com',
+      timings: '8:00 AM - 8:00 PM',
+      certifications: ['NABL', 'ISO 15189', 'JCI']
+    }
+  ],
+  'Jaipur': [
+    {
+      id: '4',
+      name: 'Pink City Labs',
+      rating: 4.3,
+      distance: '2.8 km away',
+      city: 'Jaipur',
+      address: 'C-Scheme, Jaipur',
+      phone: '+91 9876543213',
+      email: 'hello@pinkcitylabs.com',
+      timings: '7:00 AM - 9:30 PM',
+      certifications: ['NABL', 'ISO 15189']
+    },
+    {
+      id: '5',
+      name: 'Royal Diagnostics',
+      rating: 4.6,
+      distance: '1.2 km away',
+      city: 'Jaipur',
+      address: 'Malviya Nagar, Jaipur',
+      phone: '+91 9876543214',
+      email: 'care@royaldiagnostics.com',
+      timings: '6:00 AM - 10:00 PM',
+      certifications: ['NABL', 'CAP', 'ISO 15189']
+    }
+  ],
+  'Bhopal': [
+    {
+      id: '6',
+      name: 'Central India Labs',
+      rating: 4.4,
+      distance: '3.2 km away',
+      city: 'Bhopal',
+      address: 'New Market, Bhopal',
+      phone: '+91 9876543215',
+      email: 'info@centrallabs.com',
+      timings: '7:30 AM - 9:00 PM',
+      certifications: ['NABL', 'ISO 15189']
+    },
+    {
+      id: '7',
+      name: 'Madhya Pradesh Diagnostics',
+      rating: 4.1,
+      distance: '4.5 km away',
+      city: 'Bhopal',
+      address: 'MP Nagar, Bhopal',
+      phone: '+91 9876543216',
+      email: 'contact@mpdiagnostics.com',
+      timings: '8:00 AM - 8:30 PM',
+      certifications: ['NABL']
+    }
+  ],
+  'Coimbatore': [
+    {
+      id: '8',
+      name: 'Tamil Health Center',
+      rating: 4.8,
+      distance: '1.5 km away',
+      city: 'Coimbatore',
+      address: 'RS Puram, Coimbatore',
+      phone: '+91 9876543217',
+      email: 'support@tamilhealth.com',
+      timings: '6:30 AM - 10:30 PM',
+      certifications: ['NABL', 'ISO 15189', 'JCI']
+    }
+  ],
+  'Nagpur': [
+    {
+      id: '9',
+      name: 'Orange City Labs',
+      rating: 4.2,
+      distance: '2.7 km away',
+      city: 'Nagpur',
+      address: 'Sadar, Nagpur',
+      phone: '+91 9876543218',
+      email: 'info@orangecitylabs.com',
+      timings: '7:00 AM - 9:00 PM',
+      certifications: ['NABL', 'ISO 15189']
+    }
+  ],
+  'Visakhapatnam': [
+    {
+      id: '10',
+      name: 'Coastal Diagnostics',
+      rating: 4.5,
+      distance: '3.1 km away',
+      city: 'Visakhapatnam',
+      address: 'MVP Colony, Visakhapatnam',
+      phone: '+91 9876543219',
+      email: 'hello@coastaldiag.com',
+      timings: '6:00 AM - 10:00 PM',
+      certifications: ['NABL', 'CAP']
+    }
+  ]
+};
 
 const LabSelectionPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { t } = useTranslation();
-  const { toast } = useToast();
   
-  const [loading, setLoading] = useState(false);
   const [selectedCity, setSelectedCity] = useState('');
-  const [cityInput, setCityInput] = useState('');
   const [labs, setLabs] = useState<Lab[]>([]);
-  const [sortBy, setSortBy] = useState<'price' | 'rating' | 'distance'>('price');
-  const [selectedLab, setSelectedLab] = useState<Lab | null>(null);
-  const [showCityInput, setShowCityInput] = useState(true);
+  const [sortBy, setSortBy] = useState<'rating' | 'distance'>('rating');
 
   const testId = searchParams.get('testId') || '';
   const testName = searchParams.get('testName') || '';
   const originalPrice = parseInt(searchParams.get('testPrice') || '0');
 
   useEffect(() => {
-    if (selectedCity && testId) {
-      fetchLabsForTest();
+    if (selectedCity) {
+      setLabs(LABS_DATA[selectedCity] || []);
     }
-  }, [selectedCity, testId]);
+  }, [selectedCity]);
 
-  const fetchLabsForTest = async () => {
-    setLoading(true);
-    try {
-      const { data, error } = await supabase
-        .from('labs')
-        .select(`
-          id,
-          lab_name,
-          city,
-          address,
-          logo_url,
-          rating,
-          review_count,
-          phone,
-          email,
-          website,
-          certifications,
-          timings,
-          lab_tests!inner(price)
-        `)
-        .eq('city', selectedCity)
-        .eq('lab_tests.test_id', testId)
-        .eq('lab_tests.is_available', true)
-        .eq('is_active', true);
-
-      if (error) throw error;
-
-      const labsWithPrices = data.map(lab => ({
-        ...lab,
-        price: lab.lab_tests[0]?.price || originalPrice,
-        distance: '2.1 km' // Mock distance - would be calculated from user location
-      }));
-
-      setLabs(labsWithPrices);
-    } catch (error) {
-      console.error('Error fetching labs:', error);
-      toast({
-        title: t('labSelection.error.title'),
-        description: t('labSelection.error.fetchFailed'),
-        variant: 'destructive'
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleCitySubmit = () => {
-    if (!cityInput.trim()) {
-      toast({
-        title: t('labSelection.city.validation.required'),
-        description: t('labSelection.city.validation.description'),
-        variant: 'destructive'
-      });
-      return;
-    }
-    setSelectedCity(cityInput.trim());
-    setShowCityInput(false);
+  const handleCityChange = (city: string) => {
+    setSelectedCity(city);
   };
 
   const sortedLabs = [...labs].sort((a, b) => {
     switch (sortBy) {
-      case 'price':
-        return a.price - b.price;
       case 'rating':
         return b.rating - a.rating;
       case 'distance':
-        return parseFloat(a.distance || '0') - parseFloat(b.distance || '0');
+        return parseFloat(a.distance.replace(' km away', '')) - parseFloat(b.distance.replace(' km away', ''));
       default:
         return 0;
     }
@@ -132,9 +218,9 @@ const LabSelectionPage = () => {
     const bookingParams = new URLSearchParams({
       testId,
       testName,
-      testPrice: lab.price.toString(),
+      testPrice: originalPrice.toString(),
       labId: lab.id,
-      labName: lab.lab_name,
+      labName: lab.name,
       selectedCity
     });
     
@@ -146,34 +232,22 @@ const LabSelectionPage = () => {
       <CardContent className="p-6">
         <div className="flex justify-between items-start mb-4">
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">{lab.lab_name}</h3>
-            <div className="flex items-center text-gray-600 mb-2">
-              <MapPin className="w-4 h-4 mr-1" />
-              <span className="text-sm">{lab.address}</span>
+            <div className="flex items-center mb-2">
+              <span className="text-lg mr-2">🏥</span>
+              <h3 className="text-lg font-semibold text-gray-900">{lab.name}</h3>
             </div>
             <div className="flex items-center text-gray-600 mb-2">
-              <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{lab.timings}</span>
+              <span className="text-lg mr-2">⭐</span>
+              <span className="font-medium">{lab.rating}/5</span>
+            </div>
+            <div className="flex items-center text-gray-600">
+              <span className="text-lg mr-2">📍</span>
+              <span className="text-sm">{lab.distance}</span>
             </div>
           </div>
-          <div className="text-right">
-            <div className="text-2xl font-bold text-primary">₹{lab.price}</div>
-            <div className="text-sm text-gray-500">{t('labSelection.card.forTest')}</div>
-          </div>
-        </div>
-        
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center">
-            <Star className="w-4 h-4 text-yellow-500 mr-1" />
-            <span className="font-medium">{lab.rating}</span>
-            <span className="text-gray-500 ml-1">({lab.review_count} {t('labSelection.card.reviews')})</span>
-          </div>
-          {lab.distance && (
-            <span className="text-sm text-gray-600">{lab.distance}</span>
-          )}
         </div>
 
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2">
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="outline" size="sm">
@@ -182,7 +256,7 @@ const LabSelectionPage = () => {
             </DialogTrigger>
             <DialogContent className="max-w-md">
               <DialogHeader>
-                <DialogTitle>{lab.lab_name}</DialogTitle>
+                <DialogTitle>{lab.name}</DialogTitle>
               </DialogHeader>
               <div className="space-y-4">
                 <div>
@@ -193,18 +267,14 @@ const LabSelectionPage = () => {
                   <Label className="font-medium">{t('labSelection.details.timings')}</Label>
                   <p className="text-sm text-gray-600">{lab.timings}</p>
                 </div>
-                {lab.phone && (
-                  <div className="flex items-center">
-                    <Phone className="w-4 h-4 mr-2" />
-                    <span className="text-sm">{lab.phone}</span>
-                  </div>
-                )}
-                {lab.email && (
-                  <div className="flex items-center">
-                    <Mail className="w-4 h-4 mr-2" />
-                    <span className="text-sm">{lab.email}</span>
-                  </div>
-                )}
+                <div className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span className="text-sm">{lab.phone}</span>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  <span className="text-sm">{lab.email}</span>
+                </div>
                 {lab.certifications && lab.certifications.length > 0 && (
                   <div>
                     <Label className="font-medium flex items-center mb-2">
@@ -235,55 +305,6 @@ const LabSelectionPage = () => {
     </Card>
   );
 
-  if (showCityInput) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <Header />
-        
-        <section className="py-8">
-          <div className="container mx-auto px-4 max-w-md">
-            <Button 
-              variant="ghost" 
-              onClick={() => navigate(-1)}
-              className="mb-6 flex items-center"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              {t('common.back')}
-            </Button>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-center">{t('labSelection.city.title')}</CardTitle>
-                <p className="text-center text-gray-600">{t('labSelection.city.description')}</p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="city">{t('labSelection.city.label')}</Label>
-                  <Input
-                    id="city"
-                    value={cityInput}
-                    onChange={(e) => setCityInput(e.target.value)}
-                    placeholder={t('labSelection.city.placeholder')}
-                    onKeyPress={(e) => e.key === 'Enter' && handleCitySubmit()}
-                  />
-                </div>
-                <Button 
-                  onClick={handleCitySubmit}
-                  className="w-full"
-                  disabled={!cityInput.trim()}
-                >
-                  {t('labSelection.city.continue')}
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <Footer />
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -292,7 +313,7 @@ const LabSelectionPage = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <Button 
             variant="ghost" 
-            onClick={() => setShowCityInput(true)}
+            onClick={() => navigate(-1)}
             className="mb-6 flex items-center"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -300,51 +321,74 @@ const LabSelectionPage = () => {
           </Button>
 
           <div className="mb-6">
-            <h1 className="text-2xl font-bold mb-2">{t('labSelection.title')}</h1>
-            <p className="text-gray-600">
-              {t('labSelection.subtitle').replace('{{testName}}', testName).replace('{{city}}', selectedCity)}
-            </p>
-          </div>
-
-          {/* Sort Controls */}
-          <div className="flex justify-between items-center mb-6">
-            <p className="text-gray-600">
-              {t('labSelection.found').replace('{{count}}', labs.length.toString())}
-            </p>
-            <div className="flex items-center gap-2">
-              <Label htmlFor="sort">{t('labSelection.sortBy.label')}</Label>
-              <Select value={sortBy} onValueChange={(value: 'price' | 'rating' | 'distance') => setSortBy(value)}>
-                <SelectTrigger className="w-32">
-                  <SelectValue />
+            <h1 className="text-2xl font-bold mb-4">{t('labSelection.title')}</h1>
+            
+            {/* City Selection */}
+            <div className="mb-6">
+              <Label className="text-base font-medium mb-2 block">Select Your City</Label>
+              <Select value={selectedCity} onValueChange={handleCityChange}>
+                <SelectTrigger className="w-64">
+                  <SelectValue placeholder="Choose a city" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="price">{t('labSelection.sortBy.price')}</SelectItem>
-                  <SelectItem value="rating">{t('labSelection.sortBy.rating')}</SelectItem>
-                  <SelectItem value="distance">{t('labSelection.sortBy.distance')}</SelectItem>
+                  {TIER_2_CITIES.map((city) => (
+                    <SelectItem key={city} value={city}>
+                      {city}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
           </div>
 
-          {/* Lab Cards */}
-          {loading ? (
-            <div className="text-center py-8">
-              <p>{t('labSelection.loading')}</p>
-            </div>
-          ) : labs.length === 0 ? (
+          {!selectedCity ? (
             <Card>
-              <CardContent className="text-center py-8">
-                <h3 className="text-lg font-medium mb-2">{t('labSelection.noLabs.title')}</h3>
-                <p className="text-gray-600 mb-4">{t('labSelection.noLabs.description')}</p>
-                <Button onClick={() => setShowCityInput(true)}>
-                  {t('labSelection.noLabs.changeCity')}
-                </Button>
+              <CardContent className="text-center py-12">
+                <h3 className="text-lg font-medium mb-2">Please select a city to view available labs.</h3>
+                <p className="text-gray-600">Choose your city from the dropdown above to see labs near you.</p>
               </CardContent>
             </Card>
           ) : (
-            <div className="space-y-4">
-              {sortedLabs.map(renderLabCard)}
-            </div>
+            <>
+              <div className="mb-6">
+                <p className="text-gray-600">
+                  {t('labSelection.subtitle').replace('{{testName}}', testName).replace('{{city}}', selectedCity)}
+                </p>
+              </div>
+
+              {/* Sort Controls */}
+              <div className="flex justify-between items-center mb-6">
+                <p className="text-gray-600">
+                  {t('labSelection.found').replace('{{count}}', labs.length.toString())}
+                </p>
+                <div className="flex items-center gap-2">
+                  <Label htmlFor="sort">{t('labSelection.sortBy.label')}</Label>
+                  <Select value={sortBy} onValueChange={(value: 'rating' | 'distance') => setSortBy(value)}>
+                    <SelectTrigger className="w-32">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="rating">{t('labSelection.sortBy.rating')}</SelectItem>
+                      <SelectItem value="distance">{t('labSelection.sortBy.distance')}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Lab Cards */}
+              {labs.length === 0 ? (
+                <Card>
+                  <CardContent className="text-center py-8">
+                    <h3 className="text-lg font-medium mb-2">{t('labSelection.noLabs.title')}</h3>
+                    <p className="text-gray-600 mb-4">{t('labSelection.noLabs.description')}</p>
+                  </CardContent>
+                </Card>
+              ) : (
+                <div className="space-y-4">
+                  {sortedLabs.map(renderLabCard)}
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>
@@ -352,6 +396,7 @@ const LabSelectionPage = () => {
       <Footer />
     </div>
   );
+
 };
 
 export default LabSelectionPage;
