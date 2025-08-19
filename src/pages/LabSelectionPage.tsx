@@ -48,7 +48,7 @@ const TIER_2_CITIES = [
 const LABS_DATA: Record<string, Lab[]> = {
   'Lucknow': [
     {
-      id: '1',
+      id: '550e8400-e29b-41d4-a716-446655440001',
       name: 'HealthFirst Diagnostics',
       rating: 4.5,
       distance: '2.1 km away',
@@ -60,7 +60,7 @@ const LABS_DATA: Record<string, Lab[]> = {
       certifications: ['NABL', 'ISO 15189']
     },
     {
-      id: '2',
+      id: '550e8400-e29b-41d4-a716-446655440002',
       name: 'Metro Lab Services',
       rating: 4.2,
       distance: '3.5 km away',
@@ -72,7 +72,7 @@ const LABS_DATA: Record<string, Lab[]> = {
       certifications: ['NABL', 'CAP']
     },
     {
-      id: '3',
+      id: '550e8400-e29b-41d4-a716-446655440003',
       name: 'CityLife Diagnostics',
       rating: 4.7,
       distance: '1.8 km away',
@@ -86,7 +86,7 @@ const LABS_DATA: Record<string, Lab[]> = {
   ],
   'Jaipur': [
     {
-      id: '4',
+      id: '550e8400-e29b-41d4-a716-446655440004',
       name: 'Pink City Labs',
       rating: 4.3,
       distance: '2.8 km away',
@@ -98,7 +98,7 @@ const LABS_DATA: Record<string, Lab[]> = {
       certifications: ['NABL', 'ISO 15189']
     },
     {
-      id: '5',
+      id: '550e8400-e29b-41d4-a716-446655440005',
       name: 'Royal Diagnostics',
       rating: 4.6,
       distance: '1.2 km away',
@@ -112,7 +112,7 @@ const LABS_DATA: Record<string, Lab[]> = {
   ],
   'Bhopal': [
     {
-      id: '6',
+      id: '550e8400-e29b-41d4-a716-446655440006',
       name: 'Central India Labs',
       rating: 4.4,
       distance: '3.2 km away',
@@ -124,7 +124,7 @@ const LABS_DATA: Record<string, Lab[]> = {
       certifications: ['NABL', 'ISO 15189']
     },
     {
-      id: '7',
+      id: '550e8400-e29b-41d4-a716-446655440007',
       name: 'Madhya Pradesh Diagnostics',
       rating: 4.1,
       distance: '4.5 km away',
@@ -138,7 +138,7 @@ const LABS_DATA: Record<string, Lab[]> = {
   ],
   'Coimbatore': [
     {
-      id: '8',
+      id: '550e8400-e29b-41d4-a716-446655440008',
       name: 'Tamil Health Center',
       rating: 4.8,
       distance: '1.5 km away',
@@ -152,7 +152,7 @@ const LABS_DATA: Record<string, Lab[]> = {
   ],
   'Nagpur': [
     {
-      id: '9',
+      id: '550e8400-e29b-41d4-a716-446655440009',
       name: 'Orange City Labs',
       rating: 4.2,
       distance: '2.7 km away',
@@ -166,7 +166,7 @@ const LABS_DATA: Record<string, Lab[]> = {
   ],
   'Visakhapatnam': [
     {
-      id: '10',
+      id: '550e8400-e29b-41d4-a716-446655440010',
       name: 'Coastal Diagnostics',
       rating: 4.5,
       distance: '3.1 km away',
