@@ -13,6 +13,7 @@ import BookingPage from "./pages/BookingPage";
 import LabSelectionPage from "./pages/LabSelectionPage";
 import BookingConfirmationPage from "./pages/BookingConfirmationPage";
 import TrackingPage from "./pages/TrackingPage";
+import TrackReportsPage from "./pages/TrackReportsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const AppContent = () => {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/booking-confirmation" element={<BookingConfirmationPage />} />
         <Route path="/tracking" element={<TrackingPage />} />
+        <Route path="/track-reports" element={<TrackReportsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

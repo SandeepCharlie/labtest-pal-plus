@@ -97,7 +97,7 @@ export const Header = () => {
             <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.healthCheckups')}</a></li>
             <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.popularPackages')}</a></li>
             <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.homeCollection')}</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.reports')}</a></li>
+            <li><a href="/track-reports" className="text-gray-600 hover:text-medical-primary">{t('nav.trackReports')}</a></li>
             <li><a href="#" className="text-gray-600 hover:text-medical-primary">{t('nav.healthArticles')}</a></li>
           </ul>
         </nav>

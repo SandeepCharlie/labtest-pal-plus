@@ -35,7 +35,7 @@ export const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('packages.title')}</a></li>
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('nav.homeCollection')}</a></li>
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">{t('nav.healthArticles')}</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Download Reports</a></li>
+              <li><a href="/track-reports" className="text-gray-300 hover:text-medical-primary transition-colors">Track Sample & Reports</a></li>
               <li><a href="#" className="text-gray-300 hover:text-medical-primary transition-colors">Book Appointment</a></li>
             </ul>
           </div>
