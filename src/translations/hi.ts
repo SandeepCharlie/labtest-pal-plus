@@ -372,4 +372,16 @@ export const hiTranslations: TranslationData = {
   'demo.doctors.doctor2.specialty': 'पैथोलॉजिस्ट',
   'demo.doctors.doctor3.name': 'डॉ. अमित पटेल',
   'demo.doctors.doctor3.specialty': 'हृदय रोग विशेषज्ञ',
+  
+  // Video explanation section
+  'testDetail.videoSection.title': 'इस टेस्ट को समझें',
+  'testDetail.videoSection.subtitle': 'अपनी पसंदीदा भाषा में व्याख्यात्मक वीडियो देखें',
+  'testDetail.videoSection.whatIs': 'यह क्या है',
+  'testDetail.videoSection.englishDesc': 'अंग्रेजी में पूरी व्याख्या',
+  'testDetail.videoSection.whatIsHindi': 'यह टेस्ट क्या है?',
+  'testDetail.videoSection.hindiDesc': 'हिंदी में पूरी जानकारी',
+  'testDetail.videoSection.whatIsTelugu': 'ఈ పరీక్ష ఏమిటి?',
+  'testDetail.videoSection.teluguDesc': 'तेलुगु में पूर्ण विवरण',
+  'testDetail.videoSection.whatIsMarathi': 'हा चाचणी काय आहे?',
+  'testDetail.videoSection.marathiDesc': 'मराठी में संपूर्ण जानकारी',
 };

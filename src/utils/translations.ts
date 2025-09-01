@@ -335,6 +335,17 @@ export type TranslationKey =
   | 'tracking.stages.testing'
   | 'tracking.stages.testingDesc'
   | 'tracking.stages.ready'
-  | 'tracking.stages.readyDesc';
+  | 'tracking.stages.readyDesc'
+  // Video explanation section
+  | 'testDetail.videoSection.title'
+  | 'testDetail.videoSection.subtitle'
+  | 'testDetail.videoSection.whatIs'
+  | 'testDetail.videoSection.englishDesc'
+  | 'testDetail.videoSection.whatIsHindi'
+  | 'testDetail.videoSection.hindiDesc'
+  | 'testDetail.videoSection.whatIsTelugu'
+  | 'testDetail.videoSection.teluguDesc'
+  | 'testDetail.videoSection.whatIsMarathi'
+  | 'testDetail.videoSection.marathiDesc';
 
 export type TranslationData = Record<TranslationKey, string>;

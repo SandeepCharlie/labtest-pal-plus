@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Clock, FileText, MapPin, Shield, Calendar, ArrowLeft } from 'lucide-react';
+import { Clock, FileText, MapPin, Shield, Calendar, ArrowLeft, Play } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
 // Mock data - in real app this would come from API
@@ -126,6 +126,69 @@ const TestDetail = () => {
                       <Shield className="w-6 h-6 text-medical-primary mx-auto mb-2" />
                       <div className="text-sm text-gray-600">Sample</div>
                       <div className="font-semibold">{test.sampleType}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Video Explanation Section */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>{t('testDetail.videoSection.title')}</CardTitle>
+                  <p className="text-sm text-muted-foreground">{t('testDetail.videoSection.subtitle')}</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* English Video */}
+                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className="text-xs">EN</Badge>
+                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
+                        <Play className="w-8 h-8 text-primary/60" />
+                      </div>
+                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIs')} {test.name}?</h4>
+                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.englishDesc')}</p>
+                    </div>
+
+                    {/* Hindi Video */}
+                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className="text-xs">HI</Badge>
+                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
+                        <Play className="w-8 h-8 text-primary/60" />
+                      </div>
+                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIsHindi')}</h4>
+                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.hindiDesc')}</p>
+                    </div>
+
+                    {/* Telugu Video */}
+                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className="text-xs">TE</Badge>
+                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
+                        <Play className="w-8 h-8 text-primary/60" />
+                      </div>
+                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIsTelugu')}</h4>
+                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.teluguDesc')}</p>
+                    </div>
+
+                    {/* Marathi Video */}
+                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
+                      <div className="flex items-center justify-between mb-2">
+                        <Badge variant="outline" className="text-xs">MR</Badge>
+                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                      </div>
+                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
+                        <Play className="w-8 h-8 text-primary/60" />
+                      </div>
+                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIsMarathi')}</h4>
+                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.marathiDesc')}</p>
                     </div>
                   </div>
                 </CardContent>

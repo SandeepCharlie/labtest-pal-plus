@@ -342,7 +342,7 @@ export const mrTranslations: TranslationData = {
   'common.backToHome': 'होमवर परत जा',
   
   'demo.title': 'नमुना आणि अहवाल ट्रॅक करा',
-  'demo.subtitle': 'तुमच्या चाचणी प्रगतीचे निरीक्षण करा आणि अहवाल डाउनलोड करा',
+  'demo.subtitle': 'મी टেस्ট प्रगतिचे निरीक्षण करा आणि रिपोर्ट डाउनलोड करा',
   'demo.status.completed': 'अहवाल तयार',
   'demo.status.inProgress': 'प्रगतीत',
   'demo.trackingId': 'ट्रॅकिंग आयडी',
@@ -372,4 +372,16 @@ export const mrTranslations: TranslationData = {
   'demo.doctors.doctor2.specialty': 'पॅथॉलॉजिस्ट',
   'demo.doctors.doctor3.name': 'डॉ. अमित पटेल',
   'demo.doctors.doctor3.specialty': 'हृदयरोग तज्ज्ञ',
+  
+  // Video explanation section
+  'testDetail.videoSection.title': 'हा चाचणी समजून घ्या',
+  'testDetail.videoSection.subtitle': 'तुमच्या पसंतीच्या भाषेत स्पष्टीकरणात्मक व्हिडिओ पहा',
+  'testDetail.videoSection.whatIs': 'हे काय आहे',
+  'testDetail.videoSection.englishDesc': 'इंग्रजीमध्ये संपूर्ण स्पष्टीकरण',
+  'testDetail.videoSection.whatIsHindi': 'यह टेस्ट क्या है?',
+  'testDetail.videoSection.hindiDesc': 'हिंदी में संपूर्ण माहिती',
+  'testDetail.videoSection.whatIsTelugu': 'ఈ పరీక్ష ఏమిటి?',
+  'testDetail.videoSection.teluguDesc': 'तेलुगुमध्ये संपूर्ण विवरण',
+  'testDetail.videoSection.whatIsMarathi': 'हा चाचणी काय आहे?',
+  'testDetail.videoSection.marathiDesc': 'मराठीमध्ये संपूर्ण माहिती',
 };

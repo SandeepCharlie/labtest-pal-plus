@@ -371,4 +371,16 @@ export const teTranslations: TranslationData = {
   'demo.doctors.doctor2.specialty': 'పాథాలజిస్ట్',
   'demo.doctors.doctor3.name': 'డాక్టర్ అమిత్ పటేల్',
   'demo.doctors.doctor3.specialty': 'హృదయ వైద్య నిపుణుడు',
+  
+  // Video explanation section
+  'testDetail.videoSection.title': 'ఈ పరీక్షను అర్థం చేసుకోండి',
+  'testDetail.videoSection.subtitle': 'మీకు అనుకూలమైన భాషలో వివరణాత్మక వీడియోలను చూడండి',
+  'testDetail.videoSection.whatIs': 'ఇది ఏమిటి',
+  'testDetail.videoSection.englishDesc': 'ఇంగ్లీష్‌లో పూర్తి వివరణ',
+  'testDetail.videoSection.whatIsHindi': 'यह टेस्ट क्या है?',
+  'testDetail.videoSection.hindiDesc': 'हिंदी में పూర्ति जानकारी',
+  'testDetail.videoSection.whatIsTelugu': 'ఈ పరీక్ష ఏమిటి?',
+  'testDetail.videoSection.teluguDesc': 'తెలుగులో పూర్తి వివరణ',
+  'testDetail.videoSection.whatIsMarathi': 'हा चाचणी काय आहे?',
+  'testDetail.videoSection.marathiDesc': 'मराठीలో సంపూర్ణ माहिती',
 };

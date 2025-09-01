@@ -372,4 +372,16 @@ export const enTranslations: TranslationData = {
   'demo.doctors.doctor3.specialty': 'Cardiologist',
 
   'common.backToHome': 'Back to Home',
+  
+  // Video explanation section
+  'testDetail.videoSection.title': 'Understand This Test',
+  'testDetail.videoSection.subtitle': 'Watch explanatory videos in your preferred language',
+  'testDetail.videoSection.whatIs': 'What is',
+  'testDetail.videoSection.englishDesc': 'Complete explanation in English',
+  'testDetail.videoSection.whatIsHindi': 'यह टेस्ट क्या है?',
+  'testDetail.videoSection.hindiDesc': 'हिंदी में पूरी जानकारी',
+  'testDetail.videoSection.whatIsTelugu': 'ఈ పరీక్ష ఏమిటి?',
+  'testDetail.videoSection.teluguDesc': 'తెలుగులో పూర్తి వివరణ',
+  'testDetail.videoSection.whatIsMarathi': 'हा चाचणी काय आहे?',
+  'testDetail.videoSection.marathiDesc': 'मराठीमध्ये संపूर्ण माहिती',
 };
