@@ -338,4 +338,38 @@ export const hiTranslations: TranslationData = {
   'tracking.stages.testingDesc': 'आपका सैंपल प्रसंस्करण और विश्लेषण हो रहा है',
   'tracking.stages.ready': 'रिपोर्ट तैयार',
   'tracking.stages.readyDesc': 'आपकी टेस्ट रिपोर्ट डाउनलोड के लिए तैयार है',
+
+  'common.backToHome': 'होम पर वापस जाएं',
+  
+  'demo.title': 'नमूना और रिपोर्ट ट्रैक करें',
+  'demo.subtitle': 'अपनी परीक्षण प्रगति की निगरानी करें और रिपोर्ट डाउनलोड करें',
+  'demo.status.completed': 'रिपोर्ट तैयार',
+  'demo.status.inProgress': 'प्रगति में',
+  'demo.trackingId': 'ट्रैकिंग आईडी',
+  'demo.lab': 'लैब',
+  'demo.date': 'तारीख',
+  'demo.progress': 'प्रगति',
+  'demo.current': 'वर्तमान',
+  'demo.downloadReport': 'रिपोर्ट डाउनलोड करें',
+  
+  'demo.stages.collected': 'नमूना एकत्रित',
+  'demo.stages.collectedDesc': 'नमूना सफलतापूर्वक एकत्रित किया गया है',
+  'demo.stages.testing': 'लैब परीक्षण में',
+  'demo.stages.testingDesc': 'नमूने का प्रयोगशाला में विश्लेषण हो रहा है',
+  'demo.stages.pending': 'रिपोर्ट लंबित',
+  'demo.stages.pendingDesc': 'विश्लेषण प्रगति में है, रिपोर्ट जल्द तैयार होगी',
+  'demo.stages.ready': 'रिपोर्ट तैयार',
+  'demo.stages.readyDesc': 'आपकी परीक्षण रिपोर्ट डाउनलोड के लिए तैयार है',
+  
+  'demo.doctorRecommendations.title': 'अपनी रिपोर्ट के लिए डॉक्टर से सलाह लें',
+  'demo.doctorRecommendations.subtitle': 'अपने परीक्षण परिणामों पर विशेषज्ञ चिकित्सा सलाह प्राप्त करें',
+  'demo.doctorRecommendations.years': 'वर्ष अनुभव',
+  'demo.doctorRecommendations.bookConsultation': 'परामर्श बुक करें',
+  
+  'demo.doctors.doctor1.name': 'डॉ. राजेश कुमार',
+  'demo.doctors.doctor1.specialty': 'सामान्य चिकित्सक',
+  'demo.doctors.doctor2.name': 'डॉ. प्रिया शर्मा',
+  'demo.doctors.doctor2.specialty': 'पैथोलॉजिस्ट',
+  'demo.doctors.doctor3.name': 'डॉ. अमित पटेल',
+  'demo.doctors.doctor3.specialty': 'हृदय रोग विशेषज्ञ',
 };

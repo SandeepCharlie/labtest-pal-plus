@@ -337,4 +337,38 @@ export const teTranslations: TranslationData = {
   'tracking.stages.testingDesc': 'మీ నమూనా ప్రాసెసింగ్ మరియు విశ్లేషణ జరుగుతోంది',
   'tracking.stages.ready': 'నివేదిక సిద్ధంగా ఉంది',
   'tracking.stages.readyDesc': 'మీ టెస్ట్ రిపోర్ట్ డౌన్‌లోడ్ చేయడానికి సిద్ధంగా ఉంది',
+
+  'common.backToHome': 'హోమ్కి తిరిగి వెళ్ళండి',
+  
+  'demo.title': 'నమూనా మరియు రిపోర్ట్‌లను ట్రాక్ చేయండి',
+  'demo.subtitle': 'మీ టెస్ట్ పురోగతిని పర్యవేక్షించండి మరియు రిపోర్ట్‌లను డౌన్‌లోడ్ చేయండి',
+  'demo.status.completed': 'రిపోర్ట్ రెడీ',
+  'demo.status.inProgress': 'పురోగతిలో',
+  'demo.trackingId': 'ట్రాకింగ్ ఐడీ',
+  'demo.lab': 'ల్యాబ్',
+  'demo.date': 'తేదీ',
+  'demo.progress': 'పురోగతి',
+  'demo.current': 'ప్రస్తుత',
+  'demo.downloadReport': 'రిపోర్ట్ డౌన్‌లోడ్ చేయండి',
+  
+  'demo.stages.collected': 'నమూనా సేకరించబడింది',
+  'demo.stages.collectedDesc': 'నమూనా విజయవంతంగా సేకరించబడింది',
+  'demo.stages.testing': 'ల్యాబ్ టెస్టింగ్‌లో',
+  'demo.stages.testingDesc': 'నమూనా ప్రయోగశాలలో విశ్లేషించబడుతోంది',
+  'demo.stages.pending': 'రిపోర్ట్ పెండింగ్',
+  'demo.stages.pendingDesc': 'విశ్లేషణ పురోగతిలో ఉంది, రిపోర్ట్ త్వరలో రెడీ అవుతుంది',
+  'demo.stages.ready': 'రిపోర్ట్ రెడీ',
+  'demo.stages.readyDesc': 'మీ టెస్ట్ రిపోర్ట్ డౌన్‌లోడ్‌కు రెడీగా ఉంది',
+  
+  'demo.doctorRecommendations.title': 'మీ రిపోర్ట్ కోసం వైద్యుడిని సంప్రదించండి',
+  'demo.doctorRecommendations.subtitle': 'మీ టెస్ట్ ఫలితాలపై నిపుణ వైద్య సలహా పొందండి',
+  'demo.doctorRecommendations.years': 'సంవత్సరాల అనుభవం',
+  'demo.doctorRecommendations.bookConsultation': 'కన్సల్టేషన్ బుక్ చేయండి',
+  
+  'demo.doctors.doctor1.name': 'డాక్టర్ రాజేష్ కుమార్',
+  'demo.doctors.doctor1.specialty': 'సాధారణ వైద్యుడు',
+  'demo.doctors.doctor2.name': 'డాక్టర్ ప్రియా శర్మ',
+  'demo.doctors.doctor2.specialty': 'పాథాలజిస్ట్',
+  'demo.doctors.doctor3.name': 'డాక్టర్ అమిత్ పటేల్',
+  'demo.doctors.doctor3.specialty': 'హృదయ వైద్య నిపుణుడు',
 };

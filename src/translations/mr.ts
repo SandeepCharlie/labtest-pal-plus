@@ -338,4 +338,38 @@ export const mrTranslations: TranslationData = {
   'tracking.stages.testingDesc': 'तुमच्या नमुन्याची प्रक्रिया आणि विश्लेषण होत आहे',
   'tracking.stages.ready': 'अहवाल तयार',
   'tracking.stages.readyDesc': 'तुमचा चाचणी अहवाल डाउनलोडसाठी तयार आहे',
+
+  'common.backToHome': 'होमवर परत जा',
+  
+  'demo.title': 'नमुना आणि अहवाल ट्रॅक करा',
+  'demo.subtitle': 'तुमच्या चाचणी प्रगतीचे निरीक्षण करा आणि अहवाल डाउनलोड करा',
+  'demo.status.completed': 'अहवाल तयार',
+  'demo.status.inProgress': 'प्रगतीत',
+  'demo.trackingId': 'ट्रॅकिंग आयडी',
+  'demo.lab': 'लॅब',
+  'demo.date': 'तारीख',
+  'demo.progress': 'प्रगती',
+  'demo.current': 'सध्याचे',
+  'demo.downloadReport': 'अहवाल डाउनलोड करा',
+  
+  'demo.stages.collected': 'नमुना संकलित',
+  'demo.stages.collectedDesc': 'नमुना यशस्वीपणे संकलित केला गेला आहे',
+  'demo.stages.testing': 'लॅब चाचणीत',
+  'demo.stages.testingDesc': 'नमुन्याचे प्रयोगशाळेत विश्लेषण होत आहे',
+  'demo.stages.pending': 'अहवाल प्रलंबित',
+  'demo.stages.pendingDesc': 'विश्लेषण प्रगतीत आहे, अहवाल लवकरच तयार होईल',
+  'demo.stages.ready': 'अहवाल तयार',
+  'demo.stages.readyDesc': 'तुमचा चाचणी अहवाल डाउनलोडसाठी तयार आहे',
+  
+  'demo.doctorRecommendations.title': 'तुमच्या अहवालासाठी डॉक्टरांचा सल्ला घ्या',
+  'demo.doctorRecommendations.subtitle': 'तुमच्या चाचणी परिणामांवर तज्ज्ञ वैद्यकीय सल्ला मिळवा',
+  'demo.doctorRecommendations.years': 'वर्षे अनुभव',
+  'demo.doctorRecommendations.bookConsultation': 'सल्लामसलत बुक करा',
+  
+  'demo.doctors.doctor1.name': 'डॉ. राजेश कुमार',
+  'demo.doctors.doctor1.specialty': 'सामान्य वैद्य',
+  'demo.doctors.doctor2.name': 'डॉ. प्रिया शर्मा',
+  'demo.doctors.doctor2.specialty': 'पॅथॉलॉजिस्ट',
+  'demo.doctors.doctor3.name': 'डॉ. अमित पटेल',
+  'demo.doctors.doctor3.specialty': 'हृदयरोग तज्ज्ञ',
 };
