@@ -212,7 +212,11 @@ const TestDetail = () => {
               
               <Card>
                 <CardHeader>
-                  <CardTitle>Preparation Instructions</CardTitle>
+                  <div className="flex items-center space-x-2">
+                    <Clock className="w-5 h-5 text-medical-primary" />
+                    <CardTitle>{t('testDetail.preparation.title')}</CardTitle>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{t('testDetail.preparation.subtitle')}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
@@ -225,6 +229,16 @@ const TestDetail = () => {
                       </li>
                     ))}
                   </ul>
+                  
+                  <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <div className="flex items-start space-x-2">
+                      <div className="w-5 h-5 text-yellow-600 mt-0.5">⏰</div>
+                      <div>
+                        <p className="text-sm font-medium text-yellow-800">{t('testDetail.preparation.reminder')}</p>
+                        <p className="text-xs text-yellow-700 mt-1">{t('testDetail.preparation.reminderDesc')}</p>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>

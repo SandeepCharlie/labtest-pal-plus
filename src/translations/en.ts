@@ -338,6 +338,9 @@ export const enTranslations: TranslationData = {
   'tracking.stages.testingDesc': 'Your sample is being processed in the lab',
   'tracking.stages.ready': 'Report Ready',
   'tracking.stages.readyDesc': 'Your test report is ready for download',
+  'tracking.reminder.title': 'Test Preparation Reminder',
+  'tracking.reminder.message': 'Your Lipid Profile test tomorrow requires 10 hours fasting. Drink only water.',
+  'tracking.reminder.time': 'Scheduled for tomorrow at 9:00 AM',
   
   'demo.title': 'Track Sample & Reports',
   'demo.subtitle': 'Monitor your test progress and download reports',

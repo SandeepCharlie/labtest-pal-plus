@@ -384,4 +384,12 @@ export const hiTranslations: TranslationData = {
   'testDetail.videoSection.teluguDesc': 'तेलुगु में पूर्ण विवरण',
   'testDetail.videoSection.whatIsMarathi': 'हा चाचणी काय आहे?',
   'testDetail.videoSection.marathiDesc': 'मराठी में संपूर्ण जानकारी',
+  'testDetail.preparation.title': 'तैयारी आवश्यक',
+  'testDetail.preparation.subtitle': 'अपने परीक्षण से पहले पालन करने के लिए महत्वपूर्ण निर्देश',
+  'testDetail.preparation.reminder': 'रिमाइंडर सेट',
+  'testDetail.preparation.reminderDesc': 'हम आपके परीक्षण से 24 घंटे पहले तैयारी के रिमाइंडर भेजेंगे।',
+  'tracking.subtitle': 'अपनी परीक्षा प्रगति की निगरानी करें और रिपोर्ट डाउनलोड करें',
+  'tracking.reminder.title': 'परीक्षण तैयारी रिमाइंडर',
+  'tracking.reminder.message': 'कल आपके लिपिड प्रोफाइल परीक्षण के लिए 10 घंटे का उपवास आवश्यक है। केवल पानी पिएं।',
+  'tracking.reminder.time': 'कल सुबह 9:00 बजे निर्धारित',
 };

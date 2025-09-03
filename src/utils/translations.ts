@@ -336,6 +336,10 @@ export type TranslationKey =
   | 'tracking.stages.testingDesc'
   | 'tracking.stages.ready'
   | 'tracking.stages.readyDesc'
+  | 'tracking.subtitle'
+  | 'tracking.reminder.title'
+  | 'tracking.reminder.message'
+  | 'tracking.reminder.time'
   // Video explanation section
   | 'testDetail.videoSection.title'
   | 'testDetail.videoSection.subtitle'
@@ -346,6 +350,10 @@ export type TranslationKey =
   | 'testDetail.videoSection.whatIsTelugu'
   | 'testDetail.videoSection.teluguDesc'
   | 'testDetail.videoSection.whatIsMarathi'
-  | 'testDetail.videoSection.marathiDesc';
+  | 'testDetail.videoSection.marathiDesc'
+  | 'testDetail.preparation.title'
+  | 'testDetail.preparation.subtitle'
+  | 'testDetail.preparation.reminder'
+  | 'testDetail.preparation.reminderDesc';
 
 export type TranslationData = Record<TranslationKey, string>;

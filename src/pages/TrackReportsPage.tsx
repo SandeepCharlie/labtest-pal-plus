@@ -210,8 +210,26 @@ Report generated on: ${new Date().toLocaleDateString()}
 
         <div className="space-y-6">
           <div>
-            <h1 className="text-2xl font-bold mb-2">{t('demo.title')}</h1>
-            <p className="text-muted-foreground">{t('demo.subtitle')}</p>
+            <h1 className="text-2xl font-bold mb-2">{t('tracking.title')}</h1>
+            <p className="text-muted-foreground">{t('tracking.subtitle')}</p>
+          </div>
+
+          {/* Reminder Notifications */}
+          <div className="mb-8">
+            <Card className="border-l-4 border-l-yellow-500 bg-yellow-50">
+              <CardContent className="p-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                    <Clock className="w-4 h-4 text-yellow-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-yellow-800 mb-1">{t('tracking.reminder.title')}</h3>
+                    <p className="text-sm text-yellow-700">{t('tracking.reminder.message')}</p>
+                    <p className="text-xs text-yellow-600 mt-2">{t('tracking.reminder.time')}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Test Booking Cards */}
