@@ -402,4 +402,5 @@ export const teTranslations: TranslationData = {
   'reminder.fastingRequired': '10-12 గంటలు ఉపవాసం అవసరం',
   'reminder.drinkWaterOnly': 'పరీక్షకు ముందు నీరు మాత్రమే తాగండి',
   'reminder.avoidMedication': 'వైద్యుని సలహా లేకుండా మందులు తీసుకోవద్దు',
+  'reminder.viewDetails': 'వివరాలు చూడండి',
 };

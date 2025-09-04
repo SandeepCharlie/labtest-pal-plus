@@ -402,4 +402,5 @@ export const mrTranslations: TranslationData = {
   'reminder.fastingRequired': '10-12 तास उपवास आवश्यक',
   'reminder.drinkWaterOnly': 'चाचणीपूर्वी फक्त पाणी प्या',
   'reminder.avoidMedication': 'डॉक्टरांच्या सल्ल्याशिवाय औषधे घेऊ नका',
+  'reminder.viewDetails': 'तपशील पहा',
 };

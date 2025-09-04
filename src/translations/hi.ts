@@ -400,4 +400,5 @@ export const hiTranslations: TranslationData = {
   'reminder.fastingRequired': '10-12 घंटे का उपवास आवश्यक',
   'reminder.drinkWaterOnly': 'टेस्ट से पहले केवल पानी पिएं',
   'reminder.avoidMedication': 'डॉक्टर की सलाह के बिना दवा न लें',
+  'reminder.viewDetails': 'विवरण देखें',
 };

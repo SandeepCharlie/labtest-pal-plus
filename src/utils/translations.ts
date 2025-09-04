@@ -360,6 +360,7 @@ export type TranslationKey =
   | 'reminder.at'
   | 'reminder.fastingRequired'
   | 'reminder.drinkWaterOnly'
-  | 'reminder.avoidMedication';
+  | 'reminder.avoidMedication'
+  | 'reminder.viewDetails';
 
 export type TranslationData = Record<TranslationKey, string>;

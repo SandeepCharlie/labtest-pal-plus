@@ -402,4 +402,5 @@ export const enTranslations: TranslationData = {
   'reminder.fastingRequired': 'Fasting required for 10-12 hours',
   'reminder.drinkWaterOnly': 'Drink only water before test',
   'reminder.avoidMedication': 'Avoid medication unless advised by doctor',
+  'reminder.viewDetails': 'View Details',
 };
