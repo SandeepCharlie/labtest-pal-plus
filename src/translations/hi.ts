@@ -392,4 +392,12 @@ export const hiTranslations: TranslationData = {
   'tracking.reminder.title': 'परीक्षण तैयारी रिमाइंडर',
   'tracking.reminder.message': 'कल आपके लिपिड प्रोफाइल परीक्षण के लिए 10 घंटे का उपवास आवश्यक है। केवल पानी पिएं।',
   'tracking.reminder.time': 'कल सुबह 9:00 बजे निर्धारित',
+  
+  // Homepage reminders
+  'reminder.upcomingTestTitle': 'आगामी टेस्ट रिमाइंडर',
+  'reminder.preparationNeeded': 'तैयारी के निर्देश',
+  'reminder.at': 'बजे',
+  'reminder.fastingRequired': '10-12 घंटे का उपवास आवश्यक',
+  'reminder.drinkWaterOnly': 'टेस्ट से पहले केवल पानी पिएं',
+  'reminder.avoidMedication': 'डॉक्टर की सलाह के बिना दवा न लें',
 };

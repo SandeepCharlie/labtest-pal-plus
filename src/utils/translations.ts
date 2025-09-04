@@ -354,6 +354,12 @@ export type TranslationKey =
   | 'testDetail.preparation.title'
   | 'testDetail.preparation.subtitle'
   | 'testDetail.preparation.reminder'
-  | 'testDetail.preparation.reminderDesc';
+  | 'testDetail.preparation.reminderDesc'
+  | 'reminder.upcomingTestTitle'
+  | 'reminder.preparationNeeded'
+  | 'reminder.at'
+  | 'reminder.fastingRequired'
+  | 'reminder.drinkWaterOnly'
+  | 'reminder.avoidMedication';
 
 export type TranslationData = Record<TranslationKey, string>;

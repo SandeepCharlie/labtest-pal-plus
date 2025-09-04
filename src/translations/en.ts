@@ -394,4 +394,12 @@ export const enTranslations: TranslationData = {
   'testDetail.preparation.subtitle': 'Follow these instructions for accurate results',
   'testDetail.preparation.reminder': 'Test Preparation Reminder',
   'testDetail.preparation.reminderDesc': 'Important instructions to follow before your test',
+  
+  // Homepage reminders
+  'reminder.upcomingTestTitle': 'Upcoming Test Reminder',
+  'reminder.preparationNeeded': 'Preparation Instructions',
+  'reminder.at': 'at',
+  'reminder.fastingRequired': 'Fasting required for 10-12 hours',
+  'reminder.drinkWaterOnly': 'Drink only water before test',
+  'reminder.avoidMedication': 'Avoid medication unless advised by doctor',
 };

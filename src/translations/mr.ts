@@ -394,4 +394,12 @@ export const mrTranslations: TranslationData = {
   'testDetail.preparation.subtitle': 'तुमच्या चाचणीपूर्वी पाळण्याच्या महत्वाच्या सूचना',
   'testDetail.preparation.reminder': 'स्मरणपत्र सेट',
   'testDetail.preparation.reminderDesc': 'आम्ही तुमच्या चाचणीच्या 24 तास आधी तयारीचे स्मरणपत्र पाठवू.',
+  
+  // Homepage reminders
+  'reminder.upcomingTestTitle': 'येणारी चाचणी रिमाइंडर',
+  'reminder.preparationNeeded': 'तयारीच्या सूचना',
+  'reminder.at': 'वाजता',
+  'reminder.fastingRequired': '10-12 तास उपवास आवश्यक',
+  'reminder.drinkWaterOnly': 'चाचणीपूर्वी फक्त पाणी प्या',
+  'reminder.avoidMedication': 'डॉक्टरांच्या सल्ल्याशिवाय औषधे घेऊ नका',
 };

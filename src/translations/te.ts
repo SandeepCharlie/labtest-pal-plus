@@ -394,4 +394,12 @@ export const teTranslations: TranslationData = {
   'testDetail.preparation.subtitle': 'మీ పరీక్ష ముందు అనుసరించవలసిన ముఖ్యమైన సూచనలు',
   'testDetail.preparation.reminder': 'రిమైండర్ సెట్',
   'testDetail.preparation.reminderDesc': 'మీ పరీక్షకు 24 గంటల ముందు మేము తయారీ రిమైండర్లను పంపుతాము।',
+  
+  // Homepage reminders
+  'reminder.upcomingTestTitle': 'రాబోయే పరీక్ష రిమైండర్',
+  'reminder.preparationNeeded': 'తయారీ సూచనలు',
+  'reminder.at': 'కు',
+  'reminder.fastingRequired': '10-12 గంటలు ఉపవాసం అవసరం',
+  'reminder.drinkWaterOnly': 'పరీక్షకు ముందు నీరు మాత్రమే తాగండి',
+  'reminder.avoidMedication': 'వైద్యుని సలహా లేకుండా మందులు తీసుకోవద్దు',
 };
