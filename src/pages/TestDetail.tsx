@@ -8,6 +8,12 @@ import { Separator } from '@/components/ui/separator';
 import { Clock, FileText, MapPin, Shield, Calendar, ArrowLeft, Play } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
+// Import video thumbnails
+import videoThumbEnglish from '@/assets/video-thumb-english.jpg';
+import videoThumbHindi from '@/assets/video-thumb-hindi.jpg';
+import videoThumbTelugu from '@/assets/video-thumb-telugu.jpg';
+import videoThumbMarathi from '@/assets/video-thumb-marathi.jpg';
+
 // Mock data - in real app this would come from API
 const testDetails: Record<string, any> = {
   'men-health-basic': {
@@ -132,63 +138,122 @@ const TestDetail = () => {
               </Card>
               
               {/* Video Explanation Section */}
-              <Card>
+              <Card className="overflow-hidden">
                 <CardHeader>
-                  <CardTitle>{t('testDetail.videoSection.title')}</CardTitle>
+                  <CardTitle className="flex items-center gap-2">
+                    <Play className="h-5 w-5 text-primary" />
+                    {t('testDetail.videoSection.title')}
+                  </CardTitle>
                   <p className="text-sm text-muted-foreground">{t('testDetail.videoSection.subtitle')}</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* English Video */}
-                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge variant="outline" className="text-xs">EN</Badge>
-                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="group relative bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="relative">
+                        <img 
+                          src={videoThumbEnglish} 
+                          alt="English medical explanation video"
+                          className="w-full aspect-video object-cover"
+                        />
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full p-4 group-hover:scale-110 transition-transform shadow-lg">
+                            <Play className="w-8 h-8 text-primary fill-primary" />
+                          </div>
+                        </div>
+                        {/* Language badge */}
+                        <div className="absolute top-3 left-3">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-semibold shadow-sm">
+                            EN
+                          </Badge>
+                        </div>
                       </div>
-                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
-                        <Play className="w-8 h-8 text-primary/60" />
+                      <div className="p-4">
+                        <h4 className="font-semibold text-base mb-2">{t('testDetail.videoSection.whatIs')} {test.name}?</h4>
+                        <p className="text-sm text-muted-foreground">{t('testDetail.videoSection.englishDesc')}</p>
                       </div>
-                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIs')} {test.name}?</h4>
-                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.englishDesc')}</p>
                     </div>
 
                     {/* Hindi Video */}
-                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge variant="outline" className="text-xs">HI</Badge>
-                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="group relative bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="relative">
+                        <img 
+                          src={videoThumbHindi} 
+                          alt="Hindi medical explanation video"
+                          className="w-full aspect-video object-cover"
+                        />
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full p-4 group-hover:scale-110 transition-transform shadow-lg">
+                            <Play className="w-8 h-8 text-primary fill-primary" />
+                          </div>
+                        </div>
+                        {/* Language badge */}
+                        <div className="absolute top-3 left-3">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-semibold shadow-sm">
+                            HI
+                          </Badge>
+                        </div>
                       </div>
-                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
-                        <Play className="w-8 h-8 text-primary/60" />
+                      <div className="p-4">
+                        <h4 className="font-semibold text-base mb-2">{t('testDetail.videoSection.whatIsHindi')}</h4>
+                        <p className="text-sm text-muted-foreground">{t('testDetail.videoSection.hindiDesc')}</p>
                       </div>
-                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIsHindi')}</h4>
-                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.hindiDesc')}</p>
                     </div>
 
                     {/* Telugu Video */}
-                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge variant="outline" className="text-xs">TE</Badge>
-                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="group relative bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="relative">
+                        <img 
+                          src={videoThumbTelugu} 
+                          alt="Telugu medical explanation video"
+                          className="w-full aspect-video object-cover"
+                        />
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full p-4 group-hover:scale-110 transition-transform shadow-lg">
+                            <Play className="w-8 h-8 text-primary fill-primary" />
+                          </div>
+                        </div>
+                        {/* Language badge */}
+                        <div className="absolute top-3 left-3">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-semibold shadow-sm">
+                            TE
+                          </Badge>
+                        </div>
                       </div>
-                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
-                        <Play className="w-8 h-8 text-primary/60" />
+                      <div className="p-4">
+                        <h4 className="font-semibold text-base mb-2">{t('testDetail.videoSection.whatIsTelugu')}</h4>
+                        <p className="text-sm text-muted-foreground">{t('testDetail.videoSection.teluguDesc')}</p>
                       </div>
-                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIsTelugu')}</h4>
-                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.teluguDesc')}</p>
                     </div>
 
                     {/* Marathi Video */}
-                    <div className="group relative bg-muted/30 rounded-lg p-4 border border-border hover:border-primary/50 transition-colors cursor-pointer">
-                      <div className="flex items-center justify-between mb-2">
-                        <Badge variant="outline" className="text-xs">MR</Badge>
-                        <Play className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    <div className="group relative bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer">
+                      <div className="relative">
+                        <img 
+                          src={videoThumbMarathi} 
+                          alt="Marathi medical explanation video"
+                          className="w-full aspect-video object-cover"
+                        />
+                        {/* Play button overlay */}
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                          <div className="bg-white/90 backdrop-blur-sm rounded-full p-4 group-hover:scale-110 transition-transform shadow-lg">
+                            <Play className="w-8 h-8 text-primary fill-primary" />
+                          </div>
+                        </div>
+                        {/* Language badge */}
+                        <div className="absolute top-3 left-3">
+                          <Badge variant="secondary" className="bg-white/90 text-primary font-semibold shadow-sm">
+                            MR
+                          </Badge>
+                        </div>
                       </div>
-                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center mb-3">
-                        <Play className="w-8 h-8 text-primary/60" />
+                      <div className="p-4">
+                        <h4 className="font-semibold text-base mb-2">{t('testDetail.videoSection.whatIsMarathi')}</h4>
+                        <p className="text-sm text-muted-foreground">{t('testDetail.videoSection.marathiDesc')}</p>
                       </div>
-                      <h4 className="font-medium text-sm mb-1">{t('testDetail.videoSection.whatIsMarathi')}</h4>
-                      <p className="text-xs text-muted-foreground">{t('testDetail.videoSection.marathiDesc')}</p>
                     </div>
                   </div>
                 </CardContent>
