@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Stethoscope } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
-import { SymptomTestRecommendation } from './SymptomTestRecommendation';
+
+const SymptomTestRecommendation = lazy(() =>
+  import('./SymptomTestRecommendation').then((m) => ({ default: m.SymptomTestRecommendation }))
+);
 
 export const FloatingRecommendationButton: React.FC = () => {
   const { t } = useTranslation();
@@ -25,10 +28,14 @@ export const FloatingRecommendationButton: React.FC = () => {
         </Button>
       </div>
 
-      <SymptomTestRecommendation
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      <Suspense fallback={null}>
+        {isModalOpen && (
+          <SymptomTestRecommendation
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
+      </Suspense>
     </>
   );
 };
