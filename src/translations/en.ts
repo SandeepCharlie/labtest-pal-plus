@@ -387,4 +387,11 @@ export const enTranslations: TranslationData = {
   'testDetail.videoSection.teluguDesc': 'తెలుగులో పూర్తి వివరణ',
   'testDetail.videoSection.whatIsMarathi': 'हा चाचणी काय आहे?',
   'testDetail.videoSection.marathiDesc': 'मराठीमध्ये संపूर्ण माहिती',
+  
+  // Test preparation and tracking section
+  'tracking.subtitle': 'Monitor your test progress and download reports',
+  'testDetail.preparation.title': 'Preparation Needed',
+  'testDetail.preparation.subtitle': 'Follow these instructions for accurate results',
+  'testDetail.preparation.reminder': 'Test Preparation Reminder',
+  'testDetail.preparation.reminderDesc': 'Important instructions to follow before your test',
 };
