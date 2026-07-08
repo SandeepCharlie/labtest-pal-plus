@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Search, X, Calendar } from 'lucide-react';
+import { Search, X, Calendar, Volume2, Mic, MicOff } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { symptomTestMappings, availableSymptoms } from '@/data/symptomTestMapping';
 
 interface SymptomTestRecommendationProps {
@@ -12,14 +14,53 @@ interface SymptomTestRecommendationProps {
   onClose: () => void;
 }
 
+// Minimal shape of the Web Speech API's SpeechRecognition -- not part of the standard
+// DOM lib typings, so we declare just what this component actually uses.
+interface SpeechRecognitionLike {
+  lang: string;
+  interimResults: boolean;
+  continuous: boolean;
+  onstart: (() => void) | null;
+  onresult: ((event: { results: { [index: number]: { [index: number]: { transcript: string } } } }) => void) | null;
+  onerror: (() => void) | null;
+  onend: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+}
+
+interface SpeechWindow extends Window {
+  SpeechRecognition?: new () => SpeechRecognitionLike;
+  webkitSpeechRecognition?: new () => SpeechRecognitionLike;
+}
+
+// Maps the app's language codes to BCP-47 tags understood by the Web Speech APIs.
+const SPEECH_LANG: Record<string, string> = {
+  en: 'en-IN',
+  hi: 'hi-IN',
+  mr: 'mr-IN',
+  te: 'te-IN',
+};
+
 export const SymptomTestRecommendation: React.FC<SymptomTestRecommendationProps> = ({
   isOpen,
   onClose
 }) => {
   const { t } = useTranslation();
+  const { selectedLanguage } = useLanguage();
+  const navigate = useNavigate();
   const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
   const [recommendations, setRecommendations] = useState<any[]>([]);
   const [showRecommendations, setShowRecommendations] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [heardText, setHeardText] = useState('');
+  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+
+  const speechLang = SPEECH_LANG[selectedLanguage.code] || 'en-IN';
+  const speechWindow = window as unknown as SpeechWindow;
+  const speechSupported =
+    typeof window !== 'undefined' &&
+    !!(speechWindow.SpeechRecognition || speechWindow.webkitSpeechRecognition);
+  const ttsSupported = typeof window !== 'undefined' && !!window.speechSynthesis;
 
   const handleSymptomChange = (symptom: string, checked: boolean) => {
     if (checked) {
@@ -27,6 +68,61 @@ export const SymptomTestRecommendation: React.FC<SymptomTestRecommendationProps>
     } else {
       setSelectedSymptoms(selectedSymptoms.filter(s => s !== symptom));
     }
+  };
+
+  // Reads every symptom option aloud in the currently selected language, for users who
+  // find it easier to listen than to read a grid of medical-ish terms.
+  const handleListenAloud = () => {
+    if (!ttsSupported) return;
+    window.speechSynthesis.cancel();
+    const names = availableSymptoms.map((s) => t(`symptoms.${s}` as any)).join(', ');
+    const utterance = new SpeechSynthesisUtterance(names);
+    utterance.lang = speechLang;
+    window.speechSynthesis.speak(utterance);
+  };
+
+  // Lets a user speak their symptoms instead of tapping checkboxes, then auto-selects
+  // any symptom whose translated label matches (in either direction) what was heard.
+  const handleVoiceInput = () => {
+    if (!speechSupported) return;
+
+    if (isListening) {
+      recognitionRef.current?.stop();
+      return;
+    }
+
+    const RecognitionCtor = speechWindow.SpeechRecognition || speechWindow.webkitSpeechRecognition;
+    if (!RecognitionCtor) return;
+    const recognition = new RecognitionCtor();
+    recognition.lang = speechLang;
+    recognition.interimResults = false;
+    recognition.continuous = false;
+    recognitionRef.current = recognition;
+
+    recognition.onstart = () => {
+      setIsListening(true);
+      setHeardText('');
+    };
+
+    recognition.onresult = (event) => {
+      const transcript: string = event.results?.[0]?.[0]?.transcript || '';
+      setHeardText(transcript);
+
+      const lowerTranscript = transcript.toLowerCase();
+      const matched = availableSymptoms.filter((symptom) => {
+        const label = t(`symptoms.${symptom}` as any).toLowerCase();
+        return lowerTranscript.includes(label) || label.includes(lowerTranscript);
+      });
+
+      if (matched.length > 0) {
+        setSelectedSymptoms((prev) => Array.from(new Set([...prev, ...matched])));
+      }
+    };
+
+    recognition.onerror = () => setIsListening(false);
+    recognition.onend = () => setIsListening(false);
+
+    recognition.start();
   };
 
   const getRecommendations = () => {
@@ -50,11 +146,27 @@ export const SymptomTestRecommendation: React.FC<SymptomTestRecommendationProps>
     setSelectedSymptoms([]);
     setRecommendations([]);
     setShowRecommendations(false);
+    setHeardText('');
   };
 
   const handleClose = () => {
+    window.speechSynthesis?.cancel();
+    recognitionRef.current?.stop();
     resetForm();
     onClose();
+  };
+
+  // Takes the recommended test straight into the lab-selection funnel, the same place
+  // TestDetail's "Book Now" sends people -- this button used to do nothing at all.
+  const handleBookNow = (test: any) => {
+    window.speechSynthesis?.cancel();
+    onClose();
+    const params = new URLSearchParams({
+      testId: test.id,
+      testName: test.name,
+      testPrice: test.price.toString()
+    });
+    navigate(`/lab-selection?${params.toString()}`);
   };
 
   return (
@@ -81,6 +193,38 @@ export const SymptomTestRecommendation: React.FC<SymptomTestRecommendationProps>
 
         {!showRecommendations ? (
           <div className="space-y-6">
+            <div className="flex flex-wrap gap-2">
+              {ttsSupported && (
+                <Button variant="outline" size="sm" onClick={handleListenAloud} type="button">
+                  <Volume2 className="w-4 h-4 mr-2" />
+                  {t('symptomRecommendation.listenAloud')}
+                </Button>
+              )}
+              {speechSupported && (
+                <Button
+                  variant={isListening ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={handleVoiceInput}
+                  type="button"
+                >
+                  {isListening ? (
+                    <MicOff className="w-4 h-4 mr-2" />
+                  ) : (
+                    <Mic className="w-4 h-4 mr-2" />
+                  )}
+                  {isListening
+                    ? t('symptomRecommendation.listening')
+                    : t('symptomRecommendation.speakSymptoms')}
+                </Button>
+              )}
+            </div>
+
+            {heardText && (
+              <p className="text-sm text-muted-foreground">
+                {t('symptomRecommendation.heardYou')}: "{heardText}"
+              </p>
+            )}
+
             <div>
               <h3 className="text-lg font-semibold mb-4 text-foreground">
                 {t('symptomRecommendation.selectSymptoms')}
@@ -149,7 +293,10 @@ export const SymptomTestRecommendation: React.FC<SymptomTestRecommendationProps>
                         <div className="text-2xl font-bold text-medical-primary">
                           ₹{test.price}
                         </div>
-                        <Button className="bg-medical-primary hover:bg-medical-dark text-white">
+                        <Button
+                          className="bg-medical-primary hover:bg-medical-dark text-white"
+                          onClick={() => handleBookNow(test)}
+                        >
                           <Calendar className="w-4 h-4 mr-2" />
                           {t('common.bookNow')}
                         </Button>
